@@ -1,38 +1,39 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchUsers } from '../actions';
-import { Helmet } from 'react-helmet';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchUsers } from "../actions";
+import { Helmet } from "react-helmet";
 
-class UsersList extends Component {
-  componentDidMount() {
-    this.props.fetchUsers();
-  }
+const UsersList = (props) => {
+  useEffect(() => {
+    props.fetchUsers();
+  }, []);
 
-  renderUsers() {
-    return this.props.users.map(user => {
+  const RenderUsers = () => {
+    return props.users.map((user) => {
       return <li key={user.id}>{user.name}</li>;
     });
-  }
+  };
 
-  head() {
+  const head = () => {
     return (
       <Helmet>
-        <title>{`${this.props.users.length} Users Loaded`}</title>
+        <title>{`${props.users.length} Users Loaded`}</title>
         <meta property="og:title" content="Users App" />
       </Helmet>
     );
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        {this.head()}
-        Here's a big list of users:
-        <ul>{this.renderUsers()}</ul>
-      </div>
-    );
-  }
-}
+  console.log("first");
+  return (
+    <div>
+      {head()}
+      Here's a big list of users:
+      <ul>
+        <RenderUsers />
+      </ul>
+    </div>
+  );
+};
 
 function mapStateToProps(state) {
   return { users: state.users };
@@ -44,5 +45,5 @@ function loadData(store) {
 
 export default {
   loadData,
-  component: connect(mapStateToProps, { fetchUsers })(UsersList)
+  component: connect(mapStateToProps, { fetchUsers })(UsersList),
 };

@@ -33,7 +33,7 @@ app.get('/', (req, res) => {
       <a href="/auth/google">the Authentication Route</a>. You could
       also look at details about yourself at <a href="/current_user">the Current User route</a>
     </div>
-  `;
+  `; 
   if (req.user) {
     adminContent = `
       <div>

@@ -3,8 +3,8 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
-import serialize from 'serialize-javascript';
 import { Helmet } from 'react-helmet';
+import serialize from 'serialize-javascript';
 import Routes from '../client/Routes';
 
 export default (req, store, context) => {
