@@ -650,8 +650,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
@@ -666,70 +664,50 @@ var _requireAuth2 = _interopRequireDefault(_requireAuth);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var AdminsListPage = function AdminsListPage(_ref) {
+  var admins = _ref.admins,
+      fetchAdmins = _ref.fetchAdmins;
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+  (0, _react.useEffect)(function () {
+    fetchAdmins();
+  }, [fetchAdmins]);
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AdminsListPage = function (_Component) {
-  _inherits(AdminsListPage, _Component);
-
-  function AdminsListPage() {
-    _classCallCheck(this, AdminsListPage);
-
-    return _possibleConstructorReturn(this, (AdminsListPage.__proto__ || Object.getPrototypeOf(AdminsListPage)).apply(this, arguments));
-  }
-
-  _createClass(AdminsListPage, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.props.fetchAdmins();
-    }
-  }, {
-    key: 'renderAdmins',
-    value: function renderAdmins() {
-      return this.props.admins.map(function (admin) {
-        return _react2.default.createElement(
-          'li',
-          { key: admin.id },
-          admin.name
-        );
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
+  var renderAdmins = function renderAdmins() {
+    return admins.map(function (admin) {
       return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'h3',
-          null,
-          'Protected list of admins'
-        ),
-        _react2.default.createElement(
-          'ul',
-          null,
-          this.renderAdmins()
-        )
+        'li',
+        { key: admin.id },
+        admin.name
       );
-    }
-  }]);
+    });
+  };
 
-  return AdminsListPage;
-}(_react.Component);
+  return _react2.default.createElement(
+    'div',
+    null,
+    _react2.default.createElement(
+      'h3',
+      null,
+      'Protected list of admins'
+    ),
+    _react2.default.createElement(
+      'ul',
+      null,
+      renderAdmins()
+    )
+  );
+};
 
-function mapStateToProps(_ref) {
-  var admins = _ref.admins;
+function mapStateToProps(_ref2) {
+  var admins = _ref2.admins;
 
   return { admins: admins };
 }
 
 exports.default = {
   component: (0, _reactRedux.connect)(mapStateToProps, { fetchAdmins: _actions.fetchAdmins })((0, _requireAuth2.default)(AdminsListPage)),
-  loadData: function loadData(_ref2) {
-    var dispatch = _ref2.dispatch;
+  loadData: function loadData(_ref3) {
+    var dispatch = _ref3.dispatch;
     return dispatch((0, _actions.fetchAdmins)());
   }
 };
