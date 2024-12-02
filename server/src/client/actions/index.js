@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const FETCH_USERS = 'fetch_users';
 export const fetchUsers = () => async (dispatch, getState, api) => {
   const res = await api.get('/users');
@@ -24,6 +26,24 @@ export const fetchAdmins = () => async (dispatch, getState, api) => {
 
   dispatch({
     type: FETCH_ADMINS,
+    payload: res
+  });
+};
+
+
+export const setHomeLinks = (links) => ({
+  type: 'SET_HOME_LINKS',
+  payload: links
+});
+
+export const FETCH_HOME_LINKS = 'fetch_home_links';
+
+export const fetchHomeLinks = () => async (dispatch) => {
+  const res = await axios.get('https://content-stage.lamudi.pk/get-home-links/1');
+  console.log('yo->\n',res.data[0].links)
+  
+  dispatch({
+    type: FETCH_HOME_LINKS,
     payload: res
   });
 };

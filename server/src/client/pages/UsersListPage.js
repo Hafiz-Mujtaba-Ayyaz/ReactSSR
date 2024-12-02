@@ -4,6 +4,7 @@ import { fetchUsers } from "../actions";
 import { Helmet } from "react-helmet";
 
 const UsersList = (props) => {
+  console.log('->:\n',props)
   useEffect(() => {
     props.fetchUsers();
   }, []);

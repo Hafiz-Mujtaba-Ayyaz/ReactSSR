@@ -1,5 +1,5 @@
 module.exports = {
-  // Tell webpack to run babel on every file it runs through
+  mode: 'development',
   module: {
     rules: [
       {
@@ -13,6 +13,21 @@ module.exports = {
             ['env', { targets: { browsers: ['last 2 versions'] } }]
           ]
         }
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]__[local]___[hash:base64:5]'
+              }
+            }
+          },
+          'sass-loader'
+        ]
       }
     ]
   }

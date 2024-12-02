@@ -1,0 +1,39 @@
+:root {
+    /* Brand Colors */
+    --lm-primary: #ff8700;
+    --lm-secondary: #2a65d3;
+    --lm-blue-alt: #0793ea;
+  
+    /* Grays */
+    --lm-gray-50: #f9fafb;
+    --lm-gray-100: #e3e6ea;
+    --lm-gray-200: #e5e7eb;
+    --lm-gray-300: #d1d5db;
+    --lm-gray-400: #9ca3af;
+    --lm-gray-500: #6b7280;
+    --lm-gray-600: #4b5563;
+    --lm-gray-700: #374151;
+    --lm-gray-800: #1f2937;
+    --lm-gray-900: #111827;
+  
+    /* Theme Colors */
+    // --lm-brand-color: var(--lm-primary);
+    // --lm-text-color: var(--lm-gray-800);
+    --lm-bg-footer: #434343;
+    --lm-footer-text: #d1d1d1;
+    --lm-bg-color: #fafafa;
+    --lm-brand-muted: #edf2f7;
+  
+    /* Breakpoints */
+    --lm-screen-landscape: 991px;
+    --lm-screen-portrait: 767px;
+    --lm-screen-portrait-min: 500px;
+    --lm-screen-xs: 640px;
+    --lm-screen-xs-min: 375px;
+  
+    /* Typography */
+    --lm-font-size-base: 16px;
+    --lm-font-size-base-xs: 14px;
+    --lm-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+  

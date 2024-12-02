@@ -16,7 +16,7 @@ const Header = ({ auth }) => {
           React SSR
         </Link>
         <ul className="right">
-          <li>
+          <li className='text-5xl'>
             <Link to="/users">Users</Link>
           </li>
           <li>

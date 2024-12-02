@@ -1,9 +1,10 @@
-import React from 'react';
-import App from './App';
-import HomePage from './pages/HomePage';
-import UsersListPage from './pages/UsersListPage';
-import NotFoundPage from './pages/NotFoundPage';
-import AdminsListPage from './pages/AdminsListPage';
+import React from "react";
+import App from "./App";
+import HomePage from "./pages/HomePage";
+import UsersListPage from "./pages/UsersListPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import AdminsListPage from "./pages/AdminsListPage";
+import LamudiHomePage  from "./pages/home/Home";
 
 export default [
   {
@@ -11,20 +12,24 @@ export default [
     routes: [
       {
         ...HomePage,
-        path: '/',
-        exact: true
+        path: "/",
+        exact: true,
       },
       {
         ...AdminsListPage,
-        path: '/admins'
+        path: "/admins",
       },
       {
         ...UsersListPage,
-        path: '/users'
+        path: "/users",
       },
       {
-        ...NotFoundPage
-      }
-    ]
-  }
+        ...LamudiHomePage,
+        path: "/home",
+      },
+      {
+        ...NotFoundPage,
+      },
+    ],
+  },
 ];

@@ -4,7 +4,6 @@ import { fetchCurrentUser } from './actions';
 import Header from './components/Header';
 
 const App = ({ route }) => {
-  console.log(route)
   return (
     <div>
       <Header />

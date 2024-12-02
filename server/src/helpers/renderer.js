@@ -1,11 +1,11 @@
-import React from 'react';
-import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { renderRoutes } from 'react-router-config';
-import { Helmet } from 'react-helmet';
-import serialize from 'serialize-javascript';
-import Routes from '../client/Routes';
+import React from "react";
+import { renderToString } from "react-dom/server";
+import { StaticRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { renderRoutes } from "react-router-config";
+import { Helmet } from "react-helmet";
+import serialize from "serialize-javascript";
+import Routes from "../client/Routes";
 
 export default (req, store, context) => {
   const content = renderToString(
@@ -31,6 +31,7 @@ export default (req, store, context) => {
           window.INITIAL_STATE = ${serialize(store.getState())}
         </script>
         <script src="bundle.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
       </body>
     </html>
   `;
