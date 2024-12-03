@@ -1,0 +1,85 @@
+@import "../../styles/variables";
+
+.dropdown {
+  position: relative;
+}
+
+.dropdownContainer,
+.dropdownMenu {
+  background: #fff;
+  border-radius: 4px;
+  position: absolute;
+  top: 116%;
+  min-width: 180px;
+  box-shadow: 0 2px 12px -8px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.24s ease, transform 0.24s ease, visibility 0.24s;
+  width: max-content;
+  z-index: 10;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.dropdownMenu {
+  flex-direction: column;
+  padding-block: 4px;
+
+  > * {
+    align-items: center;
+    display: flex;
+    padding: 0.875em 1.25em;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover {
+      background-color: map-deep-get($colors, "grays", 200);
+    }
+
+    > svg {
+      flex: none;
+      margin-right: 8px;
+    }
+
+    + * {
+      border-top: 1px solid map-deep-get($colors, "grays", 200);
+    }
+  }
+
+  .dropdown & {
+    align-items: stretch;
+
+    > * {
+      color: #222;
+    }
+  }
+}
+
+.dropdownMenuRight {
+  right: 0;
+}
+
+.dropdownContainer {
+  padding: 16px;
+}
+
+.dropdownTrigger {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875em 0.5em;
+  vertical-align: middle;
+}
+
+.btn {
+  border: 1px solid map-deep-get($colors, "grays", 100);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+}

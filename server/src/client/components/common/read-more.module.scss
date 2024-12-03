@@ -1,0 +1,60 @@
+@import "../../styles/variables";
+
+.desText {
+  line-height: 1.8;
+  position: relative;
+
+  &.up {
+    &::before {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 60px;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(rgba($bg-color, .1) -100%, rgba($bg-color, 1) 100%);
+  }
+}
+
+.readMore {
+  color: map-deep-get($colors, "brand-colors", "secondary");
+  font-weight: 700;
+  margin-block-start: 8px;
+  padding-inline-start: 0;
+
+  svg {
+    position: relative;
+    top: 4px;
+  }
+
+  &.up {
+    svg {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.truncate {
+  -webkit-line-clamp: 7;
+  max-height: 204px;
+  transition: max-height .2s;
+  -webkit-box-orient: vertical; // stylelint-disable-line property-no-vendor-prefix
+  display: -webkit-box; // stylelint-disable-line value-no-vendor-prefix
+  margin-block-end: 8px;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 60px;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(rgba($bg-color, .1) -100%, rgba($bg-color, 1) 100%);
+    z-index: 2;
+  }
+}

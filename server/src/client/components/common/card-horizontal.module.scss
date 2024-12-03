@@ -1,0 +1,319 @@
+@import "../../styles/variables";
+
+.cardOuter {
+  position: relative;
+}
+
+.cardHorizontal {
+  --cardX-thumbnail-size: 200px;
+
+  background-color: #fff;
+  border: 1px solid map-deep-get($colors, "grays", 100);
+  border-radius: 8px;
+  display: flex;
+  flex: 1;
+  transition: border-color .15s linear;
+  overflow: hidden;
+  padding: 8px;
+  position: relative;
+
+  &:hover {
+    border-color: map-deep-get($colors, "grays", 200);
+    transition: border-color .15s linear;
+    box-shadow: 0 6px 13px hsla(0, 0%, 0%, .1);
+  }
+
+  @media (max-width: $screen-xs-max) {
+    --cardX-thumbnail-size: 132px;
+
+    padding: 6px;
+    overflow: inherit;
+  }
+
+  @media (max-width: 460px) {
+    --cardX-thumbnail-size: 124px;
+
+    border-radius: 0;
+    border-inline: 0;
+    margin-inline: -1rem;
+  }
+
+  + * {
+    margin-block-start: .5rem;
+
+    @media (min-width: $screen-xs-max + 1) {
+      margin-block-start: 1rem;
+    }
+  }
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  padding: 8px 16px 0 24px;
+  max-width: calc(100% - var(--cardX-thumbnail-size));
+
+  @media (max-width: $screen-xs-max) {
+    padding: 4px 16px;
+  }
+
+  @media (max-width: $screen-xs-min) {
+    padding-inline: 8px;
+  }
+}
+
+.cardHeader {
+  margin-block-end: 16px;
+
+  @media (max-width: $screen-xs-max) {
+    margin-block-end: 8px;
+  }
+
+  .cardTitleContainer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+
+    @media (max-width: 460px) {
+      flex-direction: column;
+      margin-block-end: 4px;
+    }
+
+    a {
+      color: #707070;
+      transition: .16s;
+
+      &:hover {
+        transition: .16s;
+      }
+
+      &:focus svg {
+        fill: currentColor;
+      }
+    }
+  }
+}
+
+.cardTitle {
+  font-size: 1.8rem;
+  margin-block-end: 8px;
+  line-height: inherit;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: 1.3rem;
+    margin-block-end: 2px;
+  }
+
+  @media (max-width: 460px) {
+    order: 2;
+  }
+}
+
+.cardSubTitleContainer {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardSubTitle {
+  color: map-deep-get($colors, "grays", 800);
+  line-height: 1.25;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: .84em;
+  }
+}
+
+.cardLabel {
+  color: map-deep-get($colors, "brand-colors", "secondary");
+  font-weight: 700;
+  text-transform: capitalize;
+
+  @media (max-width: $screen-portrait-max) {
+    top: 6px;
+    font-size: .9rem;
+  }
+}
+
+.cardSpecs {
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-block-end: .6em;
+  color: #4e596c;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: .84em;
+  }
+
+  > * + * {
+    margin-inline-start: .9em;
+  }
+
+  > div {
+    display: inherit;
+    align-items: center;
+  }
+
+  svg {
+    fill: #71717a;
+    height: auto;
+    margin-right: 4px;
+    max-width: 18px;
+    width: 18px;
+
+    @media (max-width: $screen-xs-max) {
+      max-width: 16px;
+      width: 16px;
+    }
+  }
+}
+
+.filtersLabel,
+.des {
+  color: #4e596c;
+}
+
+.filtersLabel {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.des {
+  margin-bottom: 1rem;
+  line-height: normal;
+}
+
+.imgSlides {
+  padding-top: 100%;
+  position: relative;
+  width: var(--cardX-thumbnail-size);
+
+  > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.floatingLabel {
+  border-radius: 4px;
+  color: #fff;
+  align-items: center;
+  display: flex;
+  font-size: .875rem;
+  font-weight: 700;
+  left: 8px;
+  padding: 4px 8px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (max-width: $screen-xs-max) {
+    padding: 2px 4px;
+    font-size: .75rem;
+    border-radius: 2px;
+  }
+
+  > * + * {
+    margin-left: 4px;
+    line-height: normal;
+  }
+}
+
+.cues {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  z-index: 1;
+
+  > * {
+    background-color: hsla(0, 0%, 0%, .7);
+    position: initial;
+  }
+}
+
+.iconSvg {
+  max-height: 1.125em;
+  max-width: 1.125em;
+  vertical-align: text-top;
+  width: 1.125em;
+  height: 1.125em;
+}
+
+.date {
+  font-size: .8rem;
+  color: #a3a3a3;
+
+  @media (max-width: $screen-xs-max) {
+    font-size: .75rem;
+    margin-block-end: 6px;
+  }
+}
+
+.textTruncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+
+.typePurpose {
+  padding-inline-end: 20px;
+
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+}
+
+.btnList {
+  flex-grow: 1;
+  justify-content: flex-end;
+
+  @media (max-width: $screen-xs-max) {
+    flex-direction: row-reverse;
+  }
+
+  button {
+    min-width: 96px;
+    padding-block: 8px;
+
+    @media (max-width: $screen-xs-max) {
+      flex-basis: 50%;
+      font-size: .8rem;
+      text-transform: uppercase;
+      padding-inline: 8px;
+      min-width: auto;
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    svg {
+      display: none;
+    }
+
+    .callBtn {
+      margin-inline-start: 4px;
+    }
+  }
+
+  .smsBtn {
+    display: none;
+    margin-inline-start: 0;
+
+    @media (max-width: $screen-xs-max) {
+      display: block;
+    }
+  }
+}

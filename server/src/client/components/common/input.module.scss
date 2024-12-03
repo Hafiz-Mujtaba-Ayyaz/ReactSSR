@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+.input {
+  border: 0px;
+  border-bottom: 1px solid map-deep-get($colors, "grays", 100);
+  font-weight: normal;
+  font-size: .85rem;
+  height: 36px;
+  width: 100%;
+  color: #333;
+  outline: none;
+  font-family: inherit;
+
+  &.error,
+  &.number-invalid {
+    border-bottom: 1px solid #a94442;
+  }
+}
+
+textarea.input {
+  min-height: 125px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.input input::-moz-focus-inner {
+  outline: 0;
+}
+
+.input select::-moz-focus-inner {
+  outline: 0;
+}
+
+.error {
+  color: #a94442;
+  margin-block-start: 4px;
+  display: block;
+  font-size: .85rem;
+}

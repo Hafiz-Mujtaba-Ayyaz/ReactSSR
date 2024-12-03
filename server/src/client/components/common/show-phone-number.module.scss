@@ -1,0 +1,79 @@
+@import "../../styles/variables";
+
+.icon svg {
+  --animation-scale: 1.2;
+
+  animation-name: wiggleAnimation;
+  animation-duration: 10s;
+  animation-delay: 10s;
+  animation-iteration-count: infinite;
+}
+
+.phoneButton {
+  align-items: center;
+  font-size: 1rem;
+  padding-block: 0.283em;
+
+  &:hover {
+    .icon {
+      background-color: rgba($color: #fff, $alpha: .2);
+    }
+  }
+
+  .icon {
+    flex: none;
+    width: 1.875em;
+    height: 1.875em;
+    border-radius: 50%;
+    margin-inline-end: 8px;
+  }
+}
+
+@keyframes phoneIconAnimation {
+  30%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(-16deg);
+  }
+}
+
+@keyframes wiggleAnimation {
+  0% {
+    transform: rotate(-3deg) scale(var(--animation-scale));
+  }
+
+  1.2%,
+  6.2% {
+    transform: rotate(8deg) scale(var(--animation-scale));
+  }
+
+  2.4%,
+  7.4% {
+    transform: rotate(-15deg) scale(var(--animation-scale));
+  }
+
+  3.6%,
+  8.6% {
+    transform: rotate(5deg) scale(var(--animation-scale));
+  }
+
+  4.9%,
+  9.99% {
+    transform: rotate(-8deg) scale(var(--animation-scale));
+  }
+
+  10% {
+    transform: rotate(0) scale(1);
+  }
+
+  100% {
+    transform: rotate(0) scale(1);
+  }
+}

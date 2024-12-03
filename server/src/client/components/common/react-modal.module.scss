@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.ReactModal__Content {
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.ReactModal__Overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, .9);
+  z-index: 102;
+}
+
+.popup {
+  padding: 24px;
+  z-index: 12;
+  width: 376px;
+  border-top: 4px solid map-deep-get($colors, "brand-colors", "secondary");
+  border-radius: 4px;
+  padding: 24px;
+  position: relative;
+  background-color: #fff;
+
+  @media (max-width: $screen-portrait-max) {
+    width: 300px;
+  }
+
+  .close {
+    right: 18px;
+    top: 16px;
+  }
+}
+
+.galleryClose {
+  right: 18px;
+  top: 16px;
+  background-color: #fff;
+}

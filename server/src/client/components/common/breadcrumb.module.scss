@@ -1,0 +1,60 @@
+@import "../../styles/variables";
+
+.listingBreadcrumb {
+  padding-block: 10px;
+  background-color: #f0f0f0;
+  margin-block-end: 24px;
+
+  .breadcrumbList {
+    .item {
+      display: inline-block;
+      margin-inline-start: 4px;
+
+      // @media (max-width: $screen-portrait-max) {
+      //   display: none;
+      // }
+
+      .link {
+        font-size: 0.85rem;
+        color: map-deep-get($colors, "grays", 800);
+
+        &:hover {
+          color: map-deep-get($colors, "brand-colors", "secondary");
+        }
+      }
+
+      &:not(:last-child) {
+        margin-inline-start: 0;
+      }
+
+      svg {
+        position: relative;
+        top: 4px;
+        margin-inline-start: 4px;
+      }
+
+      .disable {
+        color: map-deep-get($colors, "grays", 400);
+        font-size: 0.85rem;
+      }
+    }
+
+    .back {
+      margin-right: 32px;
+      display: inline-block;
+      margin-inline-start: 4px;
+
+      .link {
+        color: map-deep-get($colors, "brand-colors", "secondary");
+        font-size: 0.85rem;
+
+        svg {
+          position: relative;
+          top: 3px;
+          fill: currentColor;
+          margin-inline-end: 4px;
+        }
+      }
+    }
+  }
+}

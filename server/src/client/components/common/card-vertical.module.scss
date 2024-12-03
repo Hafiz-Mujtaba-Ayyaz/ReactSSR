@@ -1,0 +1,145 @@
+@import "../../styles/variables";
+
+.cardVertical {
+  background-color: #fff;
+  border: 1px solid map-deep-get($colors, "grays", 200);
+  border-radius: 8px;
+  transition: border-color 0.15s linear;
+  overflow: hidden;
+
+  &:hover {
+    border-color: map-deep-get($colors, "grays", 200);
+    transition: border-color 0.15s linear;
+  }
+}
+
+.cardBody {
+  padding: 16px;
+
+  @media (max-width: $screen-portrait-max) {
+    padding-inline: 12px;
+  }
+}
+
+.date {
+  color: map-deep-get($colors, "grays", 600);
+  bottom: 12px;
+  right: 8px;
+  left: auto;
+  background-color: rgba($color: #fff, $alpha: 0.8);
+
+  border-radius: 4px;
+  align-items: center;
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cardHeader {
+  margin-block-end: 16px;
+
+  .cardTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 10px;
+
+    a {
+      color: #707070;
+      transition: 0.16s;
+
+      &:hover {
+        transition: 0.16s;
+      }
+
+      &:focus svg {
+        fill: currentColor;
+      }
+    }
+  }
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-block-end: 4px;
+
+  small {
+    font-weight: 400;
+  }
+}
+
+.cardLabel {
+  color: map-deep-get($colors, "brand-colors", "secondary");
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin-block-end: 8px;
+  text-transform: capitalize;
+}
+
+.cardSpecs {
+  display: flex;
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  > * + * {
+    margin-inline-start: 24px;
+
+    @media (max-width: $screen-portrait-max) {
+      margin-inline-start: 16px;
+    }
+  }
+
+  > div {
+    display: inherit;
+    align-items: center;
+    color: #4e596c;
+  }
+
+  svg {
+    fill: #4e596c;
+    height: auto;
+    margin-right: 4px;
+    max-width: 16px;
+    width: 16px;
+  }
+}
+
+.imgSlides {
+  height: 200px;
+  position: relative;
+
+  @media (max-width: $screen-portrait-min) {
+    height: 150px;
+  }
+
+  > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.btnList {
+  padding-inline: 16px;
+  padding-block-end: 16px;
+
+  button {
+    flex: 1 0 0;
+    font-size: 0.85rem;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.textTruncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

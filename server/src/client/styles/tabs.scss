@@ -1,0 +1,44 @@
+@import "../../node_modules/rc-tabs/assets/index.css";
+@import "./variables";
+
+.c-tabs {
+  border: 0;
+
+  .rc-tabs-nav {
+    margin-block-end: 1rem;
+  }
+
+  .rc-tabs-nav-list {
+    width: 100%;
+
+    &::after {
+      background-color: map-deep-get($colors, "brand-colors", "secondary");;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      right: 0;
+      height: 1px;
+    }
+  }
+
+  .rc-tabs-tab {
+    color: #6b7280;
+    font-weight: 600;
+    padding-bottom: 8px;
+
+    + .rc-tabs-tab {
+      margin-left: 16px;
+    }
+  }
+
+  .rc-tabs-tab-active {
+    color: map-deep-get($colors, "brand-colors", "secondary");;
+  }
+
+  .rc-tabs-ink-bar {
+    background-color: map-deep-get($colors, "brand-colors", "secondary");;
+    border-radius: 8px;
+    z-index: 10;
+  }
+}

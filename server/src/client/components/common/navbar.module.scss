@@ -1,0 +1,107 @@
+@import "../../styles/variables";
+
+.navbar {
+  position: relative;
+
+  .mainNav {
+    align-items: center;
+    display: flex;
+    margin-inline-start: 24px;
+    text-transform: uppercase;
+
+    @media (max-width: $screen-portrait-max) {
+      display: none;
+    }
+
+    a {
+      padding: 1rem .2rem;
+      margin-inline: .8rem;
+      color: currentColor;
+      font-weight: 700;
+      font-size: 1em;
+      position: relative;
+      text-transform: capitalize;
+
+      @media (max-width: $screen-landscape-min) {
+        margin-inline: .2rem;
+        font-size: .9rem;
+      }
+
+      &::after {
+        background-color: $brand-color;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform .15s ease;
+      }
+
+      &.selected{
+        &::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        &::after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+    }
+  }
+}
+
+.navigationIcon {
+  margin-left: auto;
+  margin-right: -8px;
+  display: none;
+
+  @media (max-width: $screen-portrait-max) {
+    display: block;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+  }
+}
+
+.areaAddProperty {
+  margin-left: auto;
+  font-size: .85rem;
+
+  @media (max-width: $screen-portrait-max) {
+    display: none;
+  }
+
+  .areaUnit {
+    border: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: inherit;
+
+    button {
+      font-size: 1rem;
+      font-weight: 700;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      &:hover {
+        background-color: transparent;
+        color: map-deep-get($colors, "brand-colors", "primary");
+      }
+    }
+  }
+}

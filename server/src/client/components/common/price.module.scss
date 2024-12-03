@@ -1,0 +1,9 @@
+@import "../../styles/variables";
+
+.price {
+
+  small {
+    color: map-deep-get($colors, "grays", 700);
+    font-size: .8em;
+  }
+}

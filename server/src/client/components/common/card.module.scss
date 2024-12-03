@@ -1,0 +1,59 @@
+@import "../../styles/variables";
+
+.card {
+  display: flex;
+  justify-content: center;
+  min-height: 96px;
+  border: 1px solid map-deep-get($colors, "grays", 100);
+  border-radius: 8px;
+  padding: 24px;
+  background-color: #fff;
+
+  &:hover {
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, .04);
+  }
+
+  @media (max-width: $screen-portrait-max) {
+    padding: 16px;
+  }
+
+  .filterDes {
+    width: calc(100% - 62px);
+    flex: none;
+  }
+
+  .icon {
+    width: 41px;
+    height: 41px;
+    border-radius: 100%;
+    background-color: rgba($color: map-deep-get($colors, "brand-colors", "secondary"), $alpha: .1);
+    margin-inline-end: 18px;
+    flex: none;
+  }
+
+  .svgSearch {
+    width: 1.2em;
+    height: 1.2em;
+    fill: map-deep-get($colors, "brand-colors", "secondary");
+  }
+
+  .text {
+    font-size: .875rem;
+    color: map-deep-get($colors, "brand-colors", "secondary");
+    text-transform: uppercase;
+    font-weight: bold;
+    vertical-align: text-top;
+    margin-block-end: 4px;
+  }
+
+  .location {
+    font-weight: 700;
+    margin-block-end: 4px;
+  }
+}
+
+.textTruncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

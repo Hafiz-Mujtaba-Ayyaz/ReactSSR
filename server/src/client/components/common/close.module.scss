@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+
+.close {
+  overflow: hidden;
+  position: absolute;
+  border: 0;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: transparent;
+  color: map-deep-get($colors, "grays", 700);
+  font: inherit;
+  text-indent: 100%;
+  cursor: pointer;
+
+  &:hover {
+    background: map-deep-get($colors, "grays", 100);
+  }
+
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}

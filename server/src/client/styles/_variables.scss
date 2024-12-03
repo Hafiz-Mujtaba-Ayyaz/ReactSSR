@@ -1,0 +1,47 @@
+@import "./functions";
+
+$prefix: "lm";
+
+// Color Map
+$colors: (
+  brand-colors: (
+    primary: #ff8700,
+    secondary: #2a65d3,
+    blue-alt: #0793ea,
+  ),
+  // colors from tailwind's color library
+  grays: (
+    50: #f9fafb,
+    100: #e3e6ea,
+    200: #e5e7eb,
+    300: #d1d5db,
+    400: #9ca3af,
+    500: #6b7280,
+    600: #4b5563,
+    700: #374151,
+    800: #1f2937,
+    900: #111827,
+  )
+);
+
+$brand-color: map-deep-get($colors, "brand-colors", "primary");
+$text-color: map-deep-get($colors, "grays", 800);
+
+$bg-footer: #434343;
+$footer-text-color: #d1d1d1;
+
+$screen-landscape-min: 991px;
+$screen-portrait-max: 767px;
+$screen-portrait-min: 500px;
+$screen-xs-max: 640px;
+$screen-xs-min: 375px;
+
+$bg-color: #fafafa;
+
+$brand-muted: #edf2f7;
+
+// Font sizes
+//
+$font-size-base: 16px;
+$font-size-base-xs: 14px;
+$font-family-default: -apple-system, blinkmacsystemfont, segoe ui, roboto, oxygen, ubuntu, cantarell, fira sans, droid sans, helvetica neue, sans-serif;

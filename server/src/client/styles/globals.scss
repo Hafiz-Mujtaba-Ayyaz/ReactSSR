@@ -1,0 +1,125 @@
+@import "./functions";
+@import "./variables";
+
+:root {
+  --font-size-base: #{$font-size-base};
+
+  @media (max-width: $screen-xs-max) {
+    --font-size-base: #{$font-size-base-xs};
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available; //stylelint-disable-line value-no-vendor-prefix
+}
+
+html {
+  font: var(--font-size-base)/1 "Nunito Sans", $font-family-default;
+  padding: 0;
+  margin: 0;
+  -webkit-text-size-adjust: 100%; //stylelint-disable-line property-no-vendor-prefix
+  text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  // scroll-behavior: smooth; // Use for smooth scroll
+}
+
+body {
+  background-color: #fafafa;
+  color: $text-color;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+main,
+li {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-size: inherit;
+  font-weight: 700;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a,
+button {
+  color: inherit;
+  transition: .3s;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+input {
+  margin: 0;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+p {
+  line-height: 1.6;
+
+  &:not(:last-of-type) {
+    margin-block-end: 24px;
+  }
+
+  > a {
+    color: map-deep-get($colors, "brand-colors", "secondary");
+  }
+}
+
+ul {
+  line-height: 1.6;
+}

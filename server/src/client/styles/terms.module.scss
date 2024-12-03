@@ -1,0 +1,14 @@
+.terms {
+  line-height: 1.5;
+
+  ol {
+    list-style: lower-alpha;
+    padding-inline-start: 24px;
+    margin-block-end: 24px;
+
+    li {
+      display: list-item;
+      margin-block-end: 16px;
+    }
+  }
+}

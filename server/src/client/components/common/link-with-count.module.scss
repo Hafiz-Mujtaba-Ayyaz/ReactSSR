@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+
+.link {
+  line-height: 1.6;
+
+  &:hover {
+    color: map-deep-get($colors, "brand-colors", "secondary");
+  }
+
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 94%;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.9rem;
+  }
+}
+
+.count {
+  color: map-deep-get($colors, "grays", 400);
+  font-size: 0.85rem;
+  margin-inline-start: 4px;
+  display: inline-block;
+}

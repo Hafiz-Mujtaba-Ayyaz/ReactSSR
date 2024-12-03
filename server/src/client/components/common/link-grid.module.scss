@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.boxLinks {
+  border: 1px solid map-deep-get($colors, "grays", 100);
+  .title {
+    font-size: 2rem;
+  }
+  .subTitle {
+    font-size: 1.6rem;
+  }
+  .linkItem {
+    font-size: 1.2rem;
+  }
+  .count {
+    color: #a7a7a7;
+    padding-left: 4px;
+  }
+}
+
+.viewAllLocation {
+  color: map-deep-get($colors, "brand-colors", "secondary");
+  font-weight: 600;
+  font-size: .875rem;
+}

@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+
+.header {
+  border-bottom: 1px solid #f2f2f2;
+  padding: 20px 48px 8px 16px;
+
+  h4 {
+    padding-inline-end: 24px;
+    text-transform: uppercase;
+    margin-block-end: 0;
+  }
+}
+
+.linkList {
+  padding: 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+
+  h5 {
+    margin-block-start: 0;
+    font-size: 1rem;
+  }
+
+  a {
+    display: block;
+  }
+
+  .viewAll {
+    color: map-deep-get($colors, "brand-colors", "secondary");
+    font-weight: 700;
+    margin-block-start: 8px;
+    line-height: 1.6;
+  }
+}
+
+.popularLocationSec {
+  display: none;
+
+  @media (max-width: $screen-portrait-max) {
+    display: block;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.locationList {
+  overflow-x: auto;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  display: none;
+
+  @media (max-width: $screen-portrait-max) {
+    display: block;
+  }
+}
+
+.itemList {
+  flex-direction: row;
+  padding-inline: 1rem;
+  width: fit-content;
+}
+
+.item {
+  border: 1px solid map-deep-get($colors, "brand-colors", "secondary");
+  border-radius: 4px;
+  padding: 6px;
+  margin-inline-end: 8px;
+  color: map-deep-get($colors, "brand-colors", "secondary");
+  white-space: nowrap;
+}

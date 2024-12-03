@@ -1,0 +1,127 @@
+@import "../../styles/variables";
+
+.footer {
+  background-color: $bg-footer;
+  color: $footer-text-color;
+  font-size: .875rem;
+  line-height: 1.5;
+  padding-block: 32px;
+}
+
+.footerLinksHeader {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-block-end: 16px;
+  text-transform: capitalize;
+
+  &.org {
+    margin-inline-start: -24px;
+  }
+}
+
+.footerNav {
+  list-style: none;
+  padding-inline-start: 0;
+  font-size: .84rem;
+
+  a {
+    padding-block: 4px;
+
+    &:hover {
+      color: map-deep-get($colors, "grays", 400);
+    }
+  }
+
+  > * + * {
+    margin-block-start: 8px;
+  }
+}
+
+.offset {
+  padding-inline-start: 24px;
+}
+
+.iconFooterAdr {
+  color: #919090;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-left: -24px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+
+.backtoTop {
+  margin-left: auto;
+  padding-inline: 0;
+
+  svg {
+    vertical-align: middle;
+    margin-inline-start: 4px;
+  }
+}
+
+.theCompany {
+  padding-block: 30px;
+  border-block: 1px solid #5a5a5a;
+
+  @media (max-width: $screen-xs-max) {
+    --col-gap: 1rem;
+    --row-gap: 1.5rem;
+
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-column-gap: var(--col-gap) !important;
+    column-gap: var(--col-gap) !important;
+    grid-row-gap: var(--row-gap) !important;
+    row-gap: var(--row-gap) !important;
+
+    padding-block-start: 0;
+    border-block-start: 0;
+
+    > *:first-of-type,
+    > *:last-of-type {
+      grid-column: 1/-1;
+    }
+  }
+}
+
+.footerLogo {
+  width: 160px;
+
+  @media (max-width: $screen-xs-max) {
+    width: 135px;
+  }
+}
+
+.socialIconsList {
+  .icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: map-deep-get($colors, "grays", 50);
+
+    &:hover{
+      svg {
+        fill: #fff;
+      }
+
+      &.facebook {
+        background-color: #3a559f;
+      }
+
+      &.twitter {
+        background-color: #03a9f4;
+      }
+
+      &.linkedin {
+        background-color: #0077b5;
+      }
+    }
+
+    svg {
+      width: 1.15em;
+      height: 1.15em;
+      fill: map-deep-get($colors, "grays", 700);
+    }
+  }
+}

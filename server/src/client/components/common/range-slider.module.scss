@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+
+.rangeSlider {
+  --slider-thumb-size: 20px;
+  --slider-track-size: 6px;
+
+  padding-inline: 8px;
+
+  [class*="rc-slider"] {
+    [class*="rc-slider-rail"] {
+      height: var(--slider-track-size);
+      background-color: map-deep-get($colors, "grays", 200);
+    }
+
+    [class*="rc-slider-track"] {
+      height: var(--slider-track-size);
+      background-color: map-deep-get($colors, "brand-colors", "secondary");
+    }
+
+    [class*="rc-slider-handle"] {
+      width: var(--slider-thumb-size);
+      height: var(--slider-thumb-size);
+      border-radius: 50px;
+      border: 6px solid #fff;
+      background-color: map-deep-get($colors, "brand-colors", "secondary");
+      margin-block-start: -8px;
+      outline: none;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+
+      &[class*="rc-slider-handle-dragging"] {
+        border: 6px solid #fff;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+
+  [class^="rc-slider-dot"] {
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+.rangeSliderHeading {
+  flex-direction: row;
+}
+
+.fieldHdg {
+  flex: 1;
+  font-size: 0.85rem;
+}
+
+.headingValue {
+  flex: 1;
+}
+
+.bold {
+  font-weight: 700;
+}

@@ -1,0 +1,123 @@
+@import "./variables";
+
+@each $i in 0, 4, 8, 16, 24, 32, 40, 48, 54, 108 {
+  .u-mb#{$i},
+  .uMb#{$i} {
+    margin-bottom: $i * 1px !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+// Space between inline child elements
+// To be used with flex/inline-flex until `gap` is a living standard
+@each $i in 4, 8, 16, 24, 32, 40, 48, 54 {
+  .u-py#{$i} {
+    padding-block: $i * 1px !important;
+  }
+
+  .u-spbwx#{$i} {
+    > * + * {
+      margin-left: $i * 1px;
+    }
+  }
+
+  .u-spbwy#{$i} {
+    > * + * {
+      margin-top: $i * 1px;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flexGrow,
+.flex-grow {
+  flex: 1;
+}
+
+.inlineFlex,
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex-ycenter,
+.flexYcenter {
+  align-items: center;
+}
+
+.flex-xcenter,
+.flexXcenter {
+  justify-content: center;
+}
+
+.flex-between,
+.flexBetween {
+  justify-content: space-between;
+}
+
+.flexStart,
+.flex-start {
+  align-self: flex-start;
+}
+
+.flexEnd,
+.flex-end {
+  align-items: flex-end;
+}
+
+.justifyFlexEnd {
+  justify-content: flex-end;
+}
+
+.breakout {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
+.overlay-open,
+.ReactModal__Body--open {
+  // stylelint-disable-line selector-class-pattern
+  overflow: hidden;
+}
+
+.overlay-open {
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba($color: #000, $alpha: 0.75);
+    z-index: 10;
+    transition: background-color 0.15s ease;
+  }
+}
+
+.hiddenXs,
+.hidden-xs {
+  @media (max-width: $screen-xs-max) {
+    display: none !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+.visibleXs,
+.visible-xs {
+  display: none;
+
+  @media (max-width: $screen-xs-max) {
+    display: block !important; // stylelint-disable-line declaration-no-important
+  }
+}
+
+.text-muted {
+  color: map-deep-get($colors, "grays", 400);
+}
+
+.staticPageBanner {
+  [class^="page-layout_banner"] {
+    background-position: 0 26%;
+  }
+}

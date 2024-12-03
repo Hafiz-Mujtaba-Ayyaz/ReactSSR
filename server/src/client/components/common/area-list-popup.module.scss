@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+.areaList {
+  margin-inline: -24px;
+
+  h4 {
+    margin-block-start: 0;
+  }
+
+  .areaUnit {
+    font-size: 1rem;
+    display: block;
+    padding: 16px 24px;
+    text-align: left;
+    width: 100%;
+
+    &:hover {
+      background-color: map-deep-get($colors, "grays", 100);
+    }
+
+    .icon {
+      fill: map-deep-get($colors, "brand-colors", "secondary");
+      width: 1.125em;
+      height: 1.125em;
+      position: relative;
+      top: 4px;
+      left: 4px;
+    }
+  }
+}

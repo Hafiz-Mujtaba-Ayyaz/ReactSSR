@@ -1,0 +1,12 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-gap: 16px;
+  gap: 16px;
+
+  @media (min-width: 950px) {
+    grid-template-columns: minmax(min(64vw, 72ch), 1fr) minmax(min(22vw, 26ch), 1fr);
+    grid-gap: 24px;
+    gap: 24px;
+  }
+}

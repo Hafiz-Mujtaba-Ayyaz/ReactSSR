@@ -1,0 +1,18 @@
+.layoutGrid {
+  --a: calc((71.25 / (var(--grid-columns, 3) + 1)) * 1rem);
+  // --grid-row-gap: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(var(--a), 100%), 1fr));
+  gap: 16px;
+  grid-gap: 16px;
+  grid-row-gap: var(--grid-row-gap, 16px);
+
+  @media (min-width: 769px) {
+    // --grid-row-gap: 24px;
+
+    gap: 24px;
+    grid-gap: 24px;
+    grid-row-gap: var(--grid-row-gap, 24px);
+  }
+}
