@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { fetchHomeLinks } from "../../actions";
-import PageLayout from "../../components/page-layout";
+import { fetchHomeLinks } from "../actions";
+import PageLayout from "../components/page-layout";
+import { Helmet } from "react-helmet";
 
 const LamudiHomePage = (props) => {
   const { links = [] } = props;
@@ -18,6 +19,10 @@ const LamudiHomePage = (props) => {
       pageTitle="Find Property in Pakistan"
       description="Browse property for sale and rent in Pakistan"
     >
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{"Property for Sale and Rent in Pakistan | Lamudi"}</title>
+      </Helmet>
       <div className="min-h-screen bg-gray-100">
         {links.length > 0 ? (
           links.map((section, i) => (
@@ -63,6 +68,8 @@ function loadData(store) {
 }
 
 export default {
+  title: "Property for Sale and Rent in Pakistan | Lamudi",
+  description: "Browse property for sale and rent in Pakistan",
   loadData,
   component: connect(mapStateToProps, { fetchHomeLinks })(LamudiHomePage),
 };

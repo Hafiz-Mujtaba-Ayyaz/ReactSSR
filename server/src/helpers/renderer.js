@@ -21,9 +21,9 @@ export default (req, store, context) => {
   return `
     <html>
       <head>
+      <script src="https://cdn.tailwindcss.com"></script>
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
       </head>
       <body>
         <div id="root">${content}</div>
@@ -31,7 +31,6 @@ export default (req, store, context) => {
           window.INITIAL_STATE = ${serialize(store.getState())}
         </script>
         <script src="bundle.js"></script>
-        <script src="https://cdn.tailwindcss.com"></script>
       </body>
     </html>
   `;
