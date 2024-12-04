@@ -1,18 +1,103 @@
-import React from 'react';
+import React, { useEffect, useState, createContext } from 'react';
+// import { CookiesProvider } from 'react-cookie';
 import { renderRoutes } from 'react-router-config';
-import { fetchCurrentUser } from './actions';
+import NProgress from 'nprogress';
+// import 'nprogress/nprogress.css';
+import ReactGA from 'react-ga4';
 import Header from './components/Header';
 
-const App = ({ route }) => {
+// Import styles
+import './styles/globals.scss';
+import './styles/page-styles.scss';
+import './styles/swiper-slider.scss';
+import './styles/tabs.scss';
+import './styles/utils.modules.scss';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+
+// Contexts
+export const AreaContext = createContext();
+export const GAContext = createContext();
+
+NProgress.configure({ showSpinner: false });
+
+const Root = ({ route }) => {
+  const [areaUnit, setAreaUnit] = useState();
+  const [GAHash, setGAHash] = useState({});
+
+  useEffect(() => {
+    // Initialize Google Analytics
+    if (process.env.REACT_APP_GA_TRACKING_ID) {
+      ReactGA.initialize([{ trackingId: process.env.REACT_APP_GA_TRACKING_ID }]);
+    }
+
+    // Initialize OneSignal
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function () {
+      OneSignal.init({
+        appId: 'e06678e5-d595-4177-996b-4ea59f7d1b16',
+        notifyButton: {
+          enable: true,
+        },
+        allowLocalhostAsSecureOrigin: true,
+      });
+    });
+
+    return () => {
+      window.OneSignal = undefined;
+    };
+  }, []);
+
+  useEffect(() => {
+    // Handle NProgress on route changes
+    const handleStart = () => NProgress.start();
+    const handleStop = () => NProgress.done();
+
+    window.addEventListener('routeChangeStart', handleStart);
+    window.addEventListener('routeChangeComplete', handleStop);
+    window.addEventListener('routeChangeError', handleStop);
+
+    return () => {
+      window.removeEventListener('routeChangeStart', handleStart);
+      window.removeEventListener('routeChangeComplete', handleStop);
+      window.removeEventListener('routeChangeError', handleStop);
+    };
+  }, []);
+
   return (
-    <div>
-      <Header />
-      {renderRoutes(route.routes)}
-    </div>
+    // <CookiesProvider>
+      <GAContext.Provider value={[GAHash, setGAHash]}>
+        <AreaContext.Provider value={[areaUnit, setAreaUnit]}>
+          <Header />
+          {renderRoutes(route.routes)}
+        </AreaContext.Provider>
+      </GAContext.Provider>
+    // </CookiesProvider>
   );
 };
 
 export default {
-  component: App,
-  // loadData: ({ dispatch }) => dispatch(fetchCurrentUser())
+  component: Root,
 };
+
+
+
+// import React from 'react';
+// import { renderRoutes } from 'react-router-config';
+// import { fetchCurrentUser } from './actions';
+// import Header from './components/Header';
+
+// const App = ({ route }) => {
+//   return (
+//     <div>
+//       <Header />
+//       {renderRoutes(route.routes)}
+//     </div>
+//   );
+// };
+
+// export default {
+//   component: App,
+//   // loadData: ({ dispatch }) => dispatch(fetchCurrentUser())
+// };

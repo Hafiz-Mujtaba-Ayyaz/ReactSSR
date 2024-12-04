@@ -13,7 +13,7 @@ import styles from "./navbar.module.scss"
 import NavigationSheet from "./navigation-sheet"
 import Modal from "./react-modal"
 import Sheet from "./sheet"
-import { AreaContext } from "../../pages/_app"
+import { AreaContext } from "../../App"
 
 export default function Navbar({ className = "", ...props }) {
 
