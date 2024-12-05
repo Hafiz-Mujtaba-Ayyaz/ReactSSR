@@ -1,4 +1,6 @@
-@import "./variables";
+// @import "./variables";
+@use "./functions" as *;
+@use "./variables" as *;
 
 @each $i in 0, 4, 8, 16, 24, 32, 40, 48, 54, 108 {
   .u-mb#{$i},

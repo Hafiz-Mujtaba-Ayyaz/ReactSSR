@@ -15,18 +15,18 @@ export default [
         path: "/",
         exact: true,
       },
-      {
-        ...AdminsListPage,
-        path: "/admins",
-      },
-      {
-        ...UsersListPage,
-        path: "/users",
-      },
-      {
-        ...LamudiHomePage,
-        path: "/home",
-      },
+      // {
+      //   ...AdminsListPage,
+      //   path: "/admins",
+      // },
+      // {
+      //   ...UsersListPage,
+      //   path: "/users",
+      // },
+      // {
+      //   ...LamudiHomePage,
+      //   path: "/home",
+      // },
       {
         ...NotFoundPage,
       },

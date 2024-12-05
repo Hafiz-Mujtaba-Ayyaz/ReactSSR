@@ -1,4 +1,6 @@
-@import "../styles/variables";
+@use "./functions" as *;
+@use "./variables" as *;
+
 
 .panel {
   background-color: #fff;

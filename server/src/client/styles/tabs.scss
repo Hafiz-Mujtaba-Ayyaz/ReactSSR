@@ -1,5 +1,6 @@
-@import "../../node_modules/rc-tabs/assets/index.css";
-@import "./variables";
+@use "./functions" as *;
+@use "./variables" as *;
+@import "~rc-tabs/assets/index.css";
 
 .c-tabs {
   border: 0;

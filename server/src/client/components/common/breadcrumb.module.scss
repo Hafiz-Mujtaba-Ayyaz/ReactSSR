@@ -1,4 +1,6 @@
-@import "../../styles/variables";
+// @import "../../styles/variables";
+@use "./functions" as *;
+@use "./variables" as *;
 
 .listingBreadcrumb {
   padding-block: 10px;

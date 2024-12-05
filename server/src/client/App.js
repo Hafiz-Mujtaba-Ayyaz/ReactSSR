@@ -1,20 +1,12 @@
 import React, { useEffect, useState, createContext } from 'react';
-// import { CookiesProvider } from 'react-cookie';
 import { renderRoutes } from 'react-router-config';
 import NProgress from 'nprogress';
-// import 'nprogress/nprogress.css';
 import ReactGA from 'react-ga4';
 import Header from './components/Header';
-
-// Import styles
 import './styles/globals.scss';
 import './styles/page-styles.scss';
-import './styles/swiper-slider.scss';
 import './styles/tabs.scss';
 import './styles/utils.modules.scss';
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
 
 // Contexts
 export const AreaContext = createContext();
@@ -27,12 +19,10 @@ const Root = ({ route }) => {
   const [GAHash, setGAHash] = useState({});
 
   useEffect(() => {
-    // Initialize Google Analytics
     if (process.env.REACT_APP_GA_TRACKING_ID) {
       ReactGA.initialize([{ trackingId: process.env.REACT_APP_GA_TRACKING_ID }]);
     }
 
-    // Initialize OneSignal
     window.OneSignal = window.OneSignal || [];
     OneSignal.push(function () {
       OneSignal.init({
@@ -50,7 +40,6 @@ const Root = ({ route }) => {
   }, []);
 
   useEffect(() => {
-    // Handle NProgress on route changes
     const handleStart = () => NProgress.start();
     const handleStop = () => NProgress.done();
 
