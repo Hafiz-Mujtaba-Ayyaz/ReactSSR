@@ -1,0 +1,55 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.popularLinks {
+  h4 {
+    font-size: 1rem;
+    margin-block-end: 12px;
+  }
+}
+
+.popularLinksHeading {
+  font-size: 1.5rem;
+}
+
+.recentSearches {
+  position: relative;
+
+  [class^="swiper-button-prev"] {
+    left: 0;
+    transform: translateX(-50%);
+  }
+
+  [class^="swiper-button-next"] {
+    right: 0;
+    transform: translateX(50%);
+  }
+}
+
+.popularLocationLink {
+  margin-block-end: 8px;
+  background: map-deep-get($colors, "grays", 100);
+  padding-inline-start: 12px;
+  padding-inline-end: 12px;
+  border-radius: 4px;
+  color: map-deep-get($colors, "brand-colors", "secondary");
+  padding-block: 12px;
+
+  svg {
+    margin-left: auto;
+  }
+}
+
+.popularLocationSec {
+  display: none;
+
+  @media (max-width: $screen-portrait-max) {
+    display: block;
+  }
+}
+
+.popularLinksText {
+  a {
+    max-width: fit-content;
+  }
+}

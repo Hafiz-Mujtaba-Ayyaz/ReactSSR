@@ -1,0 +1,18 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.citySearch {
+  margin-block-start: 16px;
+}
+
+.headingLabel {
+  color: currentColor;
+  font-weight: 700;
+  margin-inline-start: 6px;
+  font-size: 1.2rem;
+  padding-inline: 0;
+
+  svg {
+    margin-inline-start: 4px;
+  }
+}

@@ -1,7 +1,5 @@
 @use "../../styles/variables" as *;
-@import "../../styles/variables";
-
-
+@use "../../styles/functions" as *;
 
 .banner {
   background-image: url("https://www.lamudi.pk/lamudi-low-resolution-01.jpg");

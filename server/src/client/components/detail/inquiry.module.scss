@@ -1,0 +1,16 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.inputWrap {
+  position: relative;
+}
+
+.required {
+  position: absolute;
+  color: map-deep-get($colors, "brand-colors", "secondary");
+  top: 3px;
+  right: 8px;
+  margin: auto;
+  height: 30px;
+  line-height: 35px;
+}

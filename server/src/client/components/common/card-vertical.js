@@ -1,9 +1,8 @@
-import dynamic from "next/dynamic"
+// import dynamic from "next/dynamic"
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react"
 import { isMobile } from "react-device-detect"
 import { MdCameraAlt, MdMail, MdPhone, MdVideocam } from "react-icons/md"
-import { GAContext } from "../../pages/_app"
 import { sendLead } from "../../services/NetworkRequests"
 import {
   convertArea,
@@ -22,8 +21,9 @@ import Heading from "./heading"
 import Price from "./price"
 import Modal from "./react-modal"
 import { Bathroom, Bedroom, LandArea } from "./svg-icons"
+import { GAContext } from "../../App";
 
-const Image = dynamic(() => import("./image"), { ssr: false })
+// const Image = dynamic(() => import("./image"), { ssr: false })
 
 const CardVertical = ({ className = "", data = {}, callToAction = false, onSuccess }) => {
   const {

@@ -1,5 +1,6 @@
 import ContentLoader from "react-content-loader"
 
+
 const Skeleton = ({ count = "5", animate = false, shape = "rect", style = {}, size = 96, ...props }) => {
   let renderLoading = []
   const renderLen = count

@@ -1,4 +1,5 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
 
 .boxLinks {
   border: 1px solid map-deep-get($colors, "grays", 100);

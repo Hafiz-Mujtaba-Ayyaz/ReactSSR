@@ -1,0 +1,261 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.homeFilters {
+  min-height: 180px;
+}
+
+.purposeButton {
+  margin-block-start: 24px;
+  button {
+    background-color: rgba($color: #000, $alpha: 0.4);
+    color: #fff;
+    padding: 14px 24px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: 0;
+    border-radius: 0;
+    min-width: 115px;
+
+    &:hover {
+      background-color: rgba($color: #000, $alpha: 0.4);
+    }
+
+    &.selected {
+      background-color: map-deep-get($colors, "brand-colors", "secondary");
+    }
+  }
+
+  .rentBtn {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .buyBtn {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+}
+
+.dropdownFilter {
+  background-color: #fff;
+  border-radius: 4px;
+
+  > div > button {
+    width: 100%;
+    padding: 12px 16px;
+  }
+}
+
+.cityDropDownFilter {
+  flex: 0.3;
+
+  @media (max-width: $screen-landscape-min) {
+    flex: 0.5;
+  }
+}
+
+.cityDropDown {
+  background-color: #fff;
+  min-width: 318px;
+}
+
+.locationFieldOuter {
+  flex: 1;
+  position: relative;
+}
+
+.locationChipList {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 4px;
+  padding-inline-start: 48px;
+  padding-inline-end: 98px;
+  z-index: 2;
+  height: auto;
+  min-height: 100%;
+
+  &::before {
+    right: 98px;
+    top: 4px;
+  }
+
+  input {
+    border: 0px;
+    border-radius: 4px;
+    min-height: 50px;
+    width: 100%;
+    font-size: 1rem;
+    padding-block-start: 2px;
+
+    &::placeholder {
+      color: map-deep-get($colors, "grays", 400);
+    }
+  }
+}
+
+.locationChip {
+  padding: 8px 26px 8px 10px;
+  border-radius: 4px;
+  background-color: rgba(167, 167, 167, 0.3);
+  text-transform: capitalize;
+  position: relative;
+  white-space: nowrap;
+  margin-block-start: 8px;
+  margin-inline-end: 8px;
+
+  > button {
+    position: absolute;
+    inset-block: 0;
+    right: 4px;
+    width: 1.125em;
+    height: 1.125em;
+    margin: auto;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.locationField {
+  position: relative;
+  background-color: #fff;
+  padding-block: 25px;
+  border-radius: 4px;
+
+  > svg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    inset-block: 0;
+    left: 12px;
+    margin: auto;
+    fill: map-deep-get($colors, "grays", 400);
+    z-index: 3;
+  }
+}
+
+.tabContainer {
+  max-width: 350px;
+}
+
+.homePage {
+  [class^="page-layout_banner"] {
+    padding-block-end: 78px;
+
+    @media (max-width: $screen-portrait-max) {
+      padding-block-end: 56px;
+    }
+  }
+
+  .homeSearch {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  h1 {
+    margin-block-start: 16px;
+
+    @media (max-width: $screen-portrait-max) {
+      margin-block-start: 0;
+    }
+  }
+}
+
+.popularCityList {
+  a {
+    width: 32.3%;
+    cursor: pointer;
+
+    &.selected,
+    &:hover {
+      color: map-deep-get($colors, "brand-colors", "secondary");
+    }
+  }
+}
+
+.dropDownButton {
+  > button {
+    width: 100%;
+  }
+}
+
+.moreFilters {
+  font-size: 0.9rem;
+  color: #fff;
+  text-transform: capitalize;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 140px;
+  height: 40px;
+  padding-inline: 10px;
+  border-radius: 4px;
+  margin-inline-start: auto;
+  margin-inline-end: 110px;
+
+  svg {
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: 2px;
+    margin-left: 4px;
+  }
+}
+
+.moreFiltersList {
+  transition: all .3s ease-in-out;
+  height: 48px;
+
+  .purposeDropDown {
+    flex-basis: 21%;
+
+    @media (max-width: $screen-landscape-min) {
+      flex-basis: 22%;
+    }
+  }
+
+  .priceDropDown {
+    flex-basis: 30%;
+
+    @media (max-width: $screen-landscape-min) {
+      flex-basis: 34%;
+    }
+  }
+
+  .areaDropDown {
+    flex-basis: 29%;
+
+    @media (max-width: $screen-landscape-min) {
+      flex-basis: 20%;
+    }
+  }
+
+  .bedsDropDown {
+    flex-basis: 20%;
+
+    @media (max-width: $screen-landscape-min) {
+      flex-basis: 30%;
+    }
+  }
+
+  &.hideBedsFilter {
+    .priceDropDown,
+    .areaDropDown {
+      flex-basis: 39%;
+    }
+  }
+}
+
+.hideOthersFilters {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hideButton {
+  display: none;
+}

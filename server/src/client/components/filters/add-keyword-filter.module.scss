@@ -1,0 +1,47 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.keywordInnerWrap {
+  .input {
+    flex: 1;
+    height: 40px;
+    border: 1px solid map-deep-get($colors, "grays", 100);
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-inline-end: 8px;
+
+    @media (max-width: $screen-portrait-max) {
+      border-inline: 0;
+      border-block-start: 0;
+      font-size: 1rem;
+    }
+  }
+}
+
+.keywordBubble {
+  .bubble {
+    background-color: rgba($color: #000, $alpha: .1);
+    padding: 10px 30px 10px 10px;
+    border-radius: 4px;
+    position: relative;
+    margin-inline-end: 6px;
+    margin-block-start: 8px;
+    word-break: break-all;
+    font-size: .85rem;
+
+    button {
+      width: 24px;
+      height: 24px;
+      margin: auto;
+      position: absolute;
+      right: 2px;
+      inset-block: 0;
+      margin-inline-start: 6px;
+      text-indent: -9999px;
+
+      &:hover {
+        background: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.popupHeader {
+  padding: 0px;
+
+  .heading {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+}
+
+.cdetailPanel {
+  &.popup {
+    padding: 24px;
+    z-index: 12;
+    width: 376px;
+    border-top: 4px solid map-deep-get($colors, "brand-colors", "secondary");
+    border-radius: 4px;
+    padding: 24px;
+    position: relative;
+    background-color: #fff;
+  }
+
+  .closeBtn {
+    right: 24px;
+    top: 24px;
+    position: absolute;
+    padding: 0;
+
+    .popupClose {
+      fill: map-deep-get($colors, "grays", 300);
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  margin-block-start: 24px;
+
+  .contactIcon {
+    width: 34px;
+    height: 34px;
+    fill: map-deep-get($colors, "brand-colors", "secondary");
+    margin-top: 5px;
+    float: left;
+  }
+
+  .contactNumList {
+    padding-inline-start: 24px;
+    float: left;
+  }
+}
+.copyWrap {
+  width: 64px;
+  margin-block-start: 12px;
+  float: right;
+  cursor: pointer;
+  padding-inline: 0;
+
+  .copyIcon {
+    width: 12px;
+    height: 12px;
+    fill: map-deep-get($colors, "brand-colors", "secondary");
+    margin-inline-end: 4px;
+  }
+
+  .txt {
+    font-size: 0.85rem;
+    color: map-deep-get($colors, "brand-colors", "secondary");
+  }
+}
+.contactNumList {
+  .heading {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-block-end: 8px;
+    display: block;
+  }
+
+  .phoneClick {
+    color: map-deep-get($colors, "brand-colors", "secondary");
+    margin-block-end: 8px;
+    font-size: 0.85rem;
+    word-break: break-all;
+    color: #333333;
+    display: block;
+  }
+
+  .conHdg {
+    font-size: 0.87rem;
+    color: #a7a7a7;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .personName {
+    font-size: 1rem;
+    color: #000;
+    display: block;
+  }
+}
+
+.popupHeading {
+  font-size: 1.12rem;
+  font-weight: bold;
+}

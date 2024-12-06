@@ -1,6 +1,7 @@
 import Slider, { Range } from "rc-slider"
 import styles from "./range-slider.module.scss"
-import "rc-slider/assets/index.css"
+// TODO Add the styles
+// import "rc-slider/assets/index.css"
 
 const RangeSlider = (props) => {
   const {

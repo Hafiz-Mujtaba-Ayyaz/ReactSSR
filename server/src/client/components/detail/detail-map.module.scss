@@ -1,0 +1,17 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.mapNavigation {
+  position: absolute;
+  right: 40px;
+  bottom: 100px;
+  z-index: 2;
+}
+
+.mapIocn {
+  width: 32px;
+  height: 32px;
+  fill: map-deep-get($colors, "brand-colors", "secondary");
+  position: relative;
+  left: -16px;
+}

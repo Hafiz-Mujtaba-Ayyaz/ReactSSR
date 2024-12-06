@@ -4,12 +4,16 @@ module.exports = {
   mode: 'development',
   resolve: {
     extensions: ['.js', '.jsx'],
-    alias: {
-      'rc-tabs': path.resolve(__dirname, 'node_modules/rc-tabs')
-    }
+    // alias: {
+    //   'rc-tabs': path.resolve(__dirname, 'node_modules/rc-tabs')
+    // }
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: ['ignore-loader'], 
+      },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',

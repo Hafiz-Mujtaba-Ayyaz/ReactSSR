@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.filterHeader {
+  .cross {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 22px;
+    right: 20px;
+  }
+}

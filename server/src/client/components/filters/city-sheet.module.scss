@@ -1,0 +1,54 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.citySearch {
+  position: relative;
+
+  input {
+    padding-inline-end: 32px;
+    font-size: 1rem;
+  }
+
+  svg {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    inset-block: 0;
+    right: 8px;
+    margin: auto;
+    fill: map-deep-get($colors, "grays", 400);
+  }
+}
+
+.popularCities {
+  overflow-y: auto;
+}
+
+.cityList {
+  > div {
+    font-size: .85rem;
+  }
+}
+
+.cityLine {
+  border: 0;
+  border-top: 1px solid map-deep-get($colors, "grays", 200);
+  margin-block: 16px 24px;
+}
+
+.btn {
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 10px 8px;
+  text-align: left;
+  width: 100%;
+
+  &.selected {
+    color: map-deep-get($colors, "brand-colors", "secondary");
+  }
+
+  &:hover,
+  &:focus {
+    background-color: map-deep-get($colors, "grays", 200);
+  }
+}

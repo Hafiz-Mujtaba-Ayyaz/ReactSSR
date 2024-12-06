@@ -1,4 +1,4 @@
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { isMobile } from "react-device-detect";
@@ -34,7 +34,7 @@ import Heading from "./heading";
 import Price from "./price";
 import MessagePopup from "./success-popup";
 
-const Image = dynamic(() => import("./image"), { ssr: false });
+// const Image = dynamic(() => import("./image"), { ssr: false });
 
 const icons = {
   landArea: (

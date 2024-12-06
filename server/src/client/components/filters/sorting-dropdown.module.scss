@@ -1,0 +1,28 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.sortingItem {
+  margin-block: 0;
+  width: 100%;
+
+  &:hover,
+  &.selected {
+    background-color: map-deep-get($colors, "grays", 100);
+  }
+}
+
+.sorting {
+  > button {
+    background-color: #fff;
+
+    span {
+      margin-inline-end: 4px;
+    }
+  }
+}
+
+.btnTransparent {
+  background-color: transparent !important;
+  border: 0;
+  padding: 4px 8px;
+}

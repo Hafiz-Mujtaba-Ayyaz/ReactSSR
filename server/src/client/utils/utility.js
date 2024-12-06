@@ -2,7 +2,6 @@ import cookie from "cookie"
 import { BEDS_FILTER_DATA, MAX_RECENT_SEARCHES, RECENT_SEARCHES_KEY, SINDH_LOCATION_ID, typesHash } from "./constants"
 import axios from "axios"
 import ReactGA from "react-ga4"
-import index from "postcss-logical"
 import { isMobile } from "react-device-detect"
 
 const BASE_URL = process.env.BASE_URL_CONTENT

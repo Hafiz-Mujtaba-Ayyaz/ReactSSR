@@ -1,0 +1,154 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.autocomplete {
+  // height: 180px;
+}
+.menuList {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 1px;
+  height: 94px;
+  background-color: #fff;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  &::-webkit-scrollbar {
+    width: 0.4em;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+  &::-moz-scrollbar {
+    width: 0.4em;
+  }
+  &::-moz-scrollbar-track {
+    -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  &::-moz-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+}
+
+.item {
+  cursor: pointer;
+  padding: 0 16px;
+  line-height: 40px;
+  height: 40px;
+  text-align: left;
+  font-size: 1rem;
+
+  &:hover,
+  &.selected {
+    background-color: #f2f2f2;
+  }
+}
+
+.input {
+  border: 1px solid #e3e3e3;
+  padding: 0 10px;
+  width: 100%;
+  font-weight: 400;
+  padding: 6px 10px;
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin-block-end: 12px;
+}
+
+.locationDropDown {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: calc(100% + 6px);
+
+  button {
+    display: none;
+  }
+
+  & > div {
+    padding: 0px;
+    width: 100%;
+
+    ul {
+      max-height: 320px;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        width: 0.4em;
+      }
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+      }
+      &::-moz-scrollbar {
+        width: 0.4em;
+      }
+      &::-moz-scrollbar-track {
+        -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+      &::-moz-scrollbar-thumb {
+        background-color: darkgrey;
+        outline: 1px solid slategrey;
+      }
+    }
+  }
+}
+
+.moreItem {
+  color: map-deep-get($colors, "brand-colors", "secondary");
+  font-weight: 700;
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  z-index: 2;
+  margin: auto;
+}
+
+.slideViewGradiant {
+  &::before {
+    content: "";
+    position: absolute;
+    height: 36px;
+    bottom: 0px;
+    width: 80px;
+    right: 0;
+    top: 6px;
+    background-image: linear-gradient(to right, rgba($bg-color, .1) -10%, rgba($bg-color, .80) 100%);
+    z-index: 1;
+  }
+}
+
+.slideView {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  position: relative;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.chipsList {
+  flex-direction: row;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+}
+
+.fieldShadow {
+  box-shadow: 0 2px 12px -8px rgb(0 0 0 / 50%);
+}

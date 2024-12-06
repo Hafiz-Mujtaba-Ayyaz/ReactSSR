@@ -1,0 +1,101 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+@media (min-width: $screen-portrait-max) {
+  .specs {
+    text-align: center;
+    margin-block-end: 24px;
+
+    > * + * {
+      margin-inline-start: 2em;
+    }
+
+    > div {
+      display: initial;
+
+      svg {
+        margin-inline-end: 0;
+        margin-block-end: 8px;
+        max-width: 24px;
+        width: 24px;
+      }
+    }
+  }
+}
+
+.specs {
+  font-size: .9rem;
+
+  @media (max-width: $screen-portrait-max) {
+    margin-block-end: 16px;
+    font-size: 1rem;
+  }
+
+  > div {
+    color: #1f1f1f;
+  }
+
+  svg {
+    fill: currentColor;
+  }
+}
+
+.mapDescription {
+  .propInfo {
+    padding-inline-end: 12px;
+  }
+}
+
+.mapIcon {
+  text-align: center;
+  padding-inline: 0;
+  color: map-deep-get($colors, "brand-colors", "secondary");
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    box-shadow: 0 1px 8px hsla(0, 0, 0, .29);
+    background-color: #fff;
+    margin: auto;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .text {
+    font-size: .9rem;
+  }
+}
+
+.price {
+  small {
+    color: map-deep-get($colors, "grays", 600);
+    font-size: .8em;
+  }
+}
+
+.textMuted {
+  color: map-deep-get($colors, "grays", 500);
+  font-size: .85rem;
+
+  .text {
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .separator {
+    font-size: 1rem;
+    display: inline-block;
+    line-height: .9;
+    position: relative;
+    top: -1px;
+  }
+
+  .date {
+    margin-inline-start: 0;
+    margin-block-start: 8px;
+  }
+}

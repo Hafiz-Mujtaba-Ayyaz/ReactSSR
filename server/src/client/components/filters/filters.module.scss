@@ -1,0 +1,70 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.filters {
+  background-color: #fff;
+  border-block: 1px solid map-deep-get($colors, "grays", 100);
+  padding-block: 12px;
+
+  @media (max-width: $screen-portrait-max) {
+    display: none;
+  }
+}
+
+.subfilters {
+  > * + * {
+    border-left: 1px solid map-deep-get($colors, "grays", 100);
+    margin-left: 16px;
+    padding-left: 16px;
+  }
+}
+
+.addKeyword {
+  width: 300px;
+}
+
+.clearAll {
+  color: map-deep-get($colors, "brand-colors", "secondary");
+  font-size: .95rem;
+  cursor: pointer;
+  font-weight: 700;
+  padding-block: 16px;
+}
+
+.tabContainer {
+  max-width: 350px;
+}
+
+.locationFieldOuter {
+  flex: 1;
+  position: relative;
+  border-radius: 4px;
+  top: -1px;
+
+  > div {
+    padding-block: 20px;
+
+
+    input {
+      min-height: 40px;
+    }
+
+    > div {
+      padding-block-start: 0;
+      border: 1px solid map-deep-get($colors, "grays", 100);
+
+      > div {
+        > div {
+          top: -4px;
+        }
+      }
+    }
+  }
+}
+
+.purposeList {
+  .selected {
+    background-color: map-deep-get($colors, "brand-colors", "primary");
+    color: #fff;
+  }
+}

@@ -1,0 +1,35 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.areaLabel {
+  .label {
+    font-weight: 700;
+  }
+
+  .labelLink {
+    color: map-deep-get($colors, "brand-colors", "secondary");
+    cursor: pointer;
+    position: relative;
+    margin-block-start: 2px;
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .areaText {
+    font-weight: 700;
+    padding-inline: 0;
+  }
+}
+
+.close {
+  font-weight: 700;
+  cursor: pointer;
+  color: #696969;
+
+  &:hover {
+    color: map-deep-get($colors, "brand-colors", "primary");
+  }
+}

@@ -10,11 +10,11 @@ export default [
   {
     ...App,
     routes: [
-      {
-        ...HomePage,
-        path: "/",
-        exact: true,
-      },
+      // {
+      //   ...HomePage,
+      //   path: "/",
+      //   exact: true,
+      // },
       // {
       //   ...AdminsListPage,
       //   path: "/admins",
@@ -23,10 +23,10 @@ export default [
       //   ...UsersListPage,
       //   path: "/users",
       // },
-      // {
-      //   ...LamudiHomePage,
-      //   path: "/home",
-      // },
+      {
+        ...LamudiHomePage,
+        path: "/home",
+      },
       {
         ...NotFoundPage,
       },

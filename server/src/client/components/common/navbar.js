@@ -1,61 +1,68 @@
-import Link from "react-router-dom"
-import { useContext, useState } from "react"
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
 // import { useCookies } from "react-cookie"
-import { MdAddCircle, MdArrowDropDown, MdMenu } from "react-icons/md"
-import { AREA_COOKIE_KEY } from "../../utils/constants"
-import AddProperty from "../sell/add-property"
-import AreaList from "./area-list-popup"
-import Button from "./button"
-import { navLinks } from "../component-data"
-import Container from "../base/container"
-import Logo from "./logo"
-import styles from "./navbar.module.scss"
-import NavigationSheet from "./navigation-sheet"
-import Modal from "./react-modal"
-import Sheet from "./sheet"
-import { AreaContext } from "../../App"
+import { MdAddCircle, MdArrowDropDown, MdMenu } from "react-icons/md";
+// import { AREA_COOKIE_KEY } from "../../utils/constants"
+import AddProperty from "../sell/add-property";
+import AreaList from "./area-list-popup";
+import Button from "./button";
+import { navLinks } from "../component-data";
+import Container from "../base/container";
+import Logo from "./logo";
+import styles from "./navbar.module.scss";
+import NavigationSheet from "./navigation-sheet";
+import Modal from "./react-modal";
+import Sheet from "./sheet";
+import { AreaContext } from "../../App";
 
 export default function Navbar({ className = "", ...props }) {
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [cookie, setCookie] = useCookies([AREA_COOKIE_KEY])
-  const [areaUnit, setAreaUnit] = useContext(AreaContext)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [cookie, setCookie] = useCookies([AREA_COOKIE_KEY])
+  const [areaUnit, setAreaUnit] = useContext(AreaContext);
 
   const menuState = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const triggerMenu = () => {
-    setIsMenuOpen(true)
-  }
+    setIsMenuOpen(true);
+  };
 
   // const [selectedArea, selectArea] = useState(
   //   cookie.area_unit && cookie.area_unit.short ? cookie.area_unit : { short: "Marla", value: "Marla" }
   // )
 
-  const [selectedArea, selectArea] = useState({ short: "Marla", value: "Marla" }
-  )
+  const [selectedArea, selectArea] = useState({
+    short: "Marla",
+    value: "Marla",
+  });
 
   // Popup open State
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
 
-  const closeModal = () => setShowModal(false)
+  const closeModal = () => setShowModal(false);
 
-  const [displayModel, setModalState] = useState(false)
+  const [displayModel, setModalState] = useState(false);
 
   // Add Property Modal For Mobile
   const mobileAddPropertyModal = () => {
-    setShowModal(true)
-    setIsMenuOpen(false)
-  }
+    setShowModal(true);
+    setIsMenuOpen(false);
+  };
 
   return (
-    <div className={`${className} ${styles.navbar}`.trim()} style={{ ...props.style }}>
+    <div
+      className={`${className} ${styles.navbar}`.trim()}
+      style={{ ...props.style }}
+    >
       <Container className={`${props.containerClass} flex flex-ycenter`}>
         {props.backButton && props.backButton}
-        <Link href="/" prefetch={false}>
+        <Link to="/" prefetch={false}>
           <p>
-            <Logo variant={props.bannerless ? "colored" : "white"} className="logo" />
+            <Logo
+              variant={props.bannerless ? "colored" : "white"}
+              className="logo"
+            />
           </p>
         </Link>
         <nav className={styles.mainNav}>
@@ -65,18 +72,22 @@ export default function Navbar({ className = "", ...props }) {
                 {external ? (
                   <a href={link}>{text}</a>
                 ) : (
-                  <Link href={link} key={i} {...rest} prefetch={false}>
-                    <p 
+                  <Link to={link} key={i} {...rest} prefetch={false}>
+                    <p
                     // TODO import pathname from the right place based on server or client
                     // className={router.pathname === link && styles.selected}
-                    >{text}</p>
+                    >
+                      {text}
+                    </p>
                   </Link>
                 )}
               </div>
-            )
+            );
           })}
         </nav>
-        <div className={`${styles.areaAddProperty} flex flex-ycenter u-spbwx8`.trim()}>
+        <div
+          className={`${styles.areaAddProperty} flex flex-ycenter u-spbwx8`.trim()}
+        >
           {/* <div className={`flex flex-ycenter u-spbwx4 ${styles.areaUnit}`.trim()}>
             <span>Area Unit:</span>
             <button className="flex flex-ycenter" onClick={() => setModalState(true)}>
@@ -97,25 +108,35 @@ export default function Navbar({ className = "", ...props }) {
           <MdMenu />
         </button>
         {isMenuOpen && (
-          <Sheet position="right" activeState={isMenuOpen} setSheetState={menuState}>
-            <NavigationSheet data={navLinks} onClickAddPropertyModal={mobileAddPropertyModal} />
+          <Sheet
+            position="right"
+            activeState={isMenuOpen}
+            setSheetState={menuState}
+          >
+            <NavigationSheet
+              data={navLinks}
+              onClickAddPropertyModal={mobileAddPropertyModal}
+            />
           </Sheet>
         )}
 
         <Modal showModal={showModal} onClickClose={closeModal}>
           <AddProperty onClickClose={closeModal} />
         </Modal>
-        <Modal showModal={displayModel} onClickClose={() => setModalState(false)}>
+        <Modal
+          showModal={displayModel}
+          onClickClose={() => setModalState(false)}
+        >
           <AreaList
             selectedArea={selectedArea}
             selectArea={(area) => {
-              selectArea(area)
-              setAreaUnit(area)
+              selectArea(area);
+              setAreaUnit(area);
             }}
             setModalState={setModalState}
           />
         </Modal>
       </Container>
     </div>
-  )
+  );
 }

@@ -1,0 +1,38 @@
+@use "../../styles/variables" as *;
+@use "../../styles/functions" as *;
+
+.beds {
+  .bedItem {
+    border: 1px solid map-deep-get($colors, "grays", 300);
+    border-radius: 4px;
+    color: map-deep-get($colors, "grays", 400);
+    padding: 8px 10px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &.selected {
+      background-color: map-deep-get($colors, "brand-colors", "secondary");
+      color: #fff;
+    }
+  }
+}
+
+.bedContainer {
+  > div {
+    right: 0;
+  }
+}
+
+.close {
+  font-weight: 700;
+  cursor: pointer;
+  color: #696969;
+
+  &:hover {
+    color: map-deep-get($colors, "brand-colors", "primary");
+  }
+}
