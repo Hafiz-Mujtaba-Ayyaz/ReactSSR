@@ -21,7 +21,6 @@ export default (req, store, context) => {
   return `
     <html>
       <head>
-      <script src="https://cdn.tailwindcss.com"></script>
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
       </head>

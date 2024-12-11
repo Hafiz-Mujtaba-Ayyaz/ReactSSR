@@ -1,4 +1,7 @@
-@use "./functions" as *;
+
+@use "sass:map";
+@use "./functions" as fn;
+
 
 
 $prefix: "lm";
@@ -25,8 +28,9 @@ $colors: (
   )
 );
 
-$brand-color: map-deep-get($colors, "brand-colors", "primary");
-$text-color: map-deep-get($colors, "grays", 800);
+$brand-color: map.get(map.get($colors, "brand-colors"), "primary");
+$text-color: map.get(map.get($colors, "grays"), "800");
+
 
 $bg-footer: #434343;
 $footer-text-color: #d1d1d1;

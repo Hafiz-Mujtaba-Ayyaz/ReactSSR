@@ -1,5 +1,9 @@
-@use "../../styles/functions" as *;
-@use "../../styles/variables" as *;
+// @use "../../styles/functions" as *;
+// @use "../../styles/variables" as *;
+
+@use "sass:map";
+@use "../../styles/variables" as vars;
+@use "../../styles/functions" as fn;
 
 .btn {
   display: inline-flex;
@@ -10,7 +14,7 @@
   border-radius: 4px;
   text-transform: capitalize;
   font-weight: 700;
-  border: 1px solid map-deep-get($colors, "brand-colors", "primary");
+  border: 1px solid fn.map-deep-get(vars.$colors, "brand-colors", "primary");
 
   > svg {
     flex: none;
@@ -35,19 +39,19 @@
 }
 
 .primaryBtn {
-  background-color: map-deep-get($colors, "brand-colors", "primary");
-  border: 1px solid map-deep-get($colors, "brand-colors", "primary");
+  background-color: fn.map-deep-get(vars.$colors, "brand-colors", "primary");
+  border: 1px solid fn.map-deep-get(vars.$colors, "brand-colors", "primary");
 
   &:hover {
-    background-color: shade(#ff8700, 15%);
-    border-color: shade(#ff8700, 15%);
+    background-color: fn.shade(#ff8700, 15%);
+    border-color: fn.shade(#ff8700, 15%);
   }
 }
 
 .primaryGhostBtn {
   border: 1px solid currentColor;
   background-color: transparent;
-  color: map-deep-get($colors, "brand-colors", "primary");
+  color: fn.map-deep-get(vars.$colors, "brand-colors", "primary");
 
   &:hover {
     background-color: #f5f5f5;
@@ -55,20 +59,20 @@
 }
 
 .secondaryBtn {
-  background-color: map-deep-get($colors, "brand-colors", "secondary");
-  border: 1px solid map-deep-get($colors, "brand-colors", "secondary");
+  background-color: fn.map-deep-get(vars.$colors, "brand-colors", "secondary");
+  border: 1px solid fn.map-deep-get(vars.$colors, "brand-colors", "secondary");
   color: #fff;
 
   &:hover {
-    background-color: shade(map-deep-get($colors, "brand-colors", "secondary"), 15%);
-    border-color: shade(map-deep-get($colors, "brand-colors", "secondary"), 15%);
+    background-color: fn.shade(fn.map-deep-get(vars.$colors, "brand-colors", "secondary"), 15%);
+    border-color: fn.shade(fn.map-deep-get(vars.$colors, "brand-colors", "secondary"), 15%);
   }
 }
 
 .secondaryGhostBtn {
   border: 1px solid currentColor;
   background-color: transparent;
-  color: map-deep-get($colors, "brand-colors", "secondary");
+  color: fn.map-deep-get(vars.$colors, "brand-colors", "secondary");
 
   &:hover {
     background-color: #f5f5f5;
@@ -77,7 +81,7 @@
 
 .btnLink {
   border-color: transparent;
-  color: map-deep-get($colors, "brand-colors", "secondary");
+  color: fn.map-deep-get(vars.$colors, "brand-colors", "secondary");
 }
 
 .sm {

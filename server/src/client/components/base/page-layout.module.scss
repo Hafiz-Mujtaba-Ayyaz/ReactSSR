@@ -1,5 +1,8 @@
-@use "../../styles/variables" as *;
-@use "../../styles/functions" as *;
+// @use "../../styles/variables" as *;
+// @use "../../styles/functions" as *;
+@use "sass:map";
+@use "../../styles/variables" as vars;
+@use "../../styles/functions" as fn;
 
 .banner {
   background-image: url("https://www.lamudi.pk/lamudi-low-resolution-01.jpg");
@@ -14,7 +17,7 @@
   position: relative;
   justify-content: space-between;
 
-  @media (max-width: $screen-portrait-max) {
+  @media (max-width: vars.$screen-portrait-max) {
     min-height: 210px;
   }
 
@@ -50,7 +53,7 @@
     position: relative;
     top: -2px;
 
-    @media (max-width: $screen-portrait-max) {
+    @media (max-width: vars.$screen-portrait-max) {
       top: 2px;
     }
   }

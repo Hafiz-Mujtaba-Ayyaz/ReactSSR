@@ -81,7 +81,7 @@ const BedFilter = (props) => {
                 dropdownRef.current.setIsActive(false)
               }}
             >
-              {src === "home" ? "Done" : "Search"}
+              {src === "home" ? "Done" : "Search1"}
             </Button>
           </div>
         </DropdownMenu>

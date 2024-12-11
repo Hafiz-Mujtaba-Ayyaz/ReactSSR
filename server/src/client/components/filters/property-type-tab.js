@@ -1,22 +1,36 @@
-import Tabs, { TabPane } from "rc-tabs"
-import { useRef } from "react"
+import Tabs, { TabPane } from "rc-tabs";
+import { useRef } from "react";
 // TODO add these styles
 // import "react-simple-tabs-component/dist/index.css"
-import { commercialTabs, homesTab, plotsTab, typesHash } from "../../utils/constants"
-import DropdownMenu from "../common/dropdown-menu"
-import { tabContainer } from "./home-filters.module.scss"
-import styles from "./property-type-tab.module.scss"
+import {
+  commercialTabs,
+  homesTab,
+  plotsTab,
+  typesHash,
+} from "../../utils/constants";
+import DropdownMenu from "../common/dropdown-menu";
+import { tabContainer } from "./home-filters.module.scss";
+import styles from "./property-type-tab.module.scss";
 
 const TabData = (props) => {
-  const { selectedType, selectType, tabsMapping, dropDownRef, className = "" } = props
-  const allTypes = [homesTab, plotsTab, commercialTabs]
+  const {
+    selectedType,
+    selectType,
+    tabsMapping,
+    dropDownRef,
+    className = "",
+  } = props;
+  const allTypes = [homesTab, plotsTab, commercialTabs];
   return (
     <Tabs
       className={`${className} c-tabs`}
       onTabClick={(key) => {
-        selectType(tabsMapping[key])
+        selectType(tabsMapping[key]);
       }}
-      defaultActiveKey={(typesHash[selectedType?.slug?.toLowerCase()]?.parentId).toString() || "1"}
+      defaultActiveKey={
+        (typesHash[selectedType?.slug?.toLowerCase()]?.parentId).toString() ||
+        "1"
+      }
     >
       {allTypes.map((parentType, i) => {
         return (
@@ -27,8 +41,8 @@ const TabData = (props) => {
                   <div
                     key={item.slug}
                     onClick={() => {
-                      dropDownRef?.current?.setIsActive(false)
-                      selectType(item)
+                      dropDownRef?.current?.setIsActive(false);
+                      selectType(item);
                     }}
                     className={`${styles.tabItem} ${
                       item.slug == selectedType.slug ? styles.selected : ""
@@ -37,17 +51,22 @@ const TabData = (props) => {
                     {item.icon()}
                     {item.name}
                   </div>
-                )
+                );
               })}
             </div>
           </TabPane>
-        )
+        );
       })}
     </Tabs>
-  )
-}
+  );
+};
 
-export default function PropertyTypeTab({ selectedType, selectType, isMobile, className = "" }) {
+export default function PropertyTypeTab({
+  selectedType,
+  selectType,
+  isMobile,
+  className = "",
+}) {
   const tabsMapping = {
     1: {
       name: "Homes",
@@ -73,23 +92,32 @@ export default function PropertyTypeTab({ selectedType, selectType, isMobile, cl
       parentId: 3,
       external_slug: "Commercial",
     },
-  }
-  const dRef = useRef()
+  };
+  const dRef = useRef();
 
   return isMobile ? (
-    <TabData selectType={selectType} tabsMapping={tabsMapping} selectedType={selectedType} className={className} />
+    <TabData
+      selectType={selectType}
+      tabsMapping={tabsMapping}
+      selectedType={selectedType}
+      className={className}
+    />
   ) : (
     <DropdownMenu
       ref={dRef}
       classNameInner={styles.tabContainer}
       buttonText={`${
-        selectedType.parentId && selectedType.id && selectedType.parentId == selectedType.id ? "All " : ""
+        selectedType.parentId &&
+        selectedType.id &&
+        selectedType.parentId == selectedType.id
+          ? "All "
+          : ""
       }${selectedType.name}`}
     >
       <div className={tabContainer}>
         <TabData
           selectType={(selected) => {
-            selectType(selected)
+            selectType(selected);
           }}
           tabsMapping={tabsMapping}
           dropDownRef={dRef}
@@ -98,5 +126,5 @@ export default function PropertyTypeTab({ selectedType, selectType, isMobile, cl
         />
       </div>
     </DropdownMenu>
-  )
+  );
 }

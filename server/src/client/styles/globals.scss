@@ -1,14 +1,18 @@
-@import "./functions";
-@import "./variables";
+@use "sass:map";
+
+@use "./functions" as fn;
+@use "./_variables" as vars;
+
+
+
 
 :root {
-  --font-size-base: #{$font-size-base};
+  --font-size-base: #{vars.$font-size-base};
 
-  @media (max-width: $screen-xs-max) {
-    --font-size-base: #{$font-size-base-xs};
+  @media (max-width: vars.$screen-xs-max) {
+    --font-size-base: #{vars.$font-size-base-xs};
   }
 }
-
 *,
 *::after,
 *::before {
@@ -22,7 +26,7 @@ body {
 }
 
 html {
-  font: var(--font-size-base)/1 "Nunito Sans", $font-family-default;
+  font: var(--font-size-base)/1 "Nunito Sans", vars.$font-family-default;
   padding: 0;
   margin: 0;
   -webkit-text-size-adjust: 100%; //stylelint-disable-line property-no-vendor-prefix
@@ -34,7 +38,7 @@ html {
 
 body {
   background-color: #fafafa;
-  color: $text-color;
+  color: vars.$text-color;
   margin: 0;
 }
 
@@ -116,7 +120,7 @@ p {
   }
 
   > a {
-    color: map-deep-get($colors, "brand-colors", "secondary");
+    color: fn.map-deep-get(vars.$colors, "brand-colors", "secondary");
   }
 }
 

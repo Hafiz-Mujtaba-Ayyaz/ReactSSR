@@ -4,16 +4,13 @@ module.exports = {
   mode: 'development',
   resolve: {
     extensions: ['.js', '.jsx'],
-    // alias: {
-    //   'rc-tabs': path.resolve(__dirname, 'node_modules/rc-tabs')
-    // }
   },
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: ['ignore-loader'], 
-      },
+      // {
+      //   test: /\.css$/,
+      //   use: ['ignore-loader'], 
+      // },
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
@@ -25,45 +22,43 @@ module.exports = {
           ]
         }
       },
-      {
-        test: /\.css$/,
-        include: /node_modules/,
-        use: ['null-loader']
-      },
+      // {
+      //   test: /\.css$/,
+      //   include: /node_modules/,
+      //   use: ['null-loader']
+      // },
       {
         test: /\.css$/,
         exclude: /node_modules/,
         use: [
-          'isomorphic-style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1
-            }
-          }
+          'style-loader',
+          'css-loader',
         ]
       },
       {
         test: /\.scss$/,
         use: [
-          'isomorphic-style-loader',
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
               modules: {
-                localIdentName: '[name]__[local]___[hash:base64:5]'
+                mode: 'icss',
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+                localIdentContext: path.resolve(__dirname, 'src')
               },
-              importLoaders: 2
+              importLoaders: 1
             }
           },
-          {
-            loader: 'sass-loader',
-            options: {
-              sassOptions: {
-                quietDeps: true
-              }
-            }
-          }
+          'sass-loader'
+          // {
+          //   loader: 'sass-loader',
+          //   options: {
+          //     sassOptions: {
+          //       // quietDeps: true
+          //     }
+          //   }
+          // }
         ]
       }
     ]

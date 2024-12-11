@@ -3,9 +3,14 @@
 // @param {Color} $color - color to tint
 // @param {Number} $percentage - percentage of `$color` in returned color
 // @return {Color}
+
+@use "sass:map";
+@use "sass:color";
+
 @function tint($color, $percentage) {
-  @return mix(white, $color, $percentage);
+  @return color.scale($color, $lightness: $percentage);
 }
+
 
 // Slightly darken a color
 // @access public
@@ -13,8 +18,9 @@
 // @param {Number} $percentage - percentage of `$color` in returned color
 // @return {Color}
 @function shade($color, $percentage) {
-  @return mix(black, $color, $percentage);
+  @return color.scale($color, $lightness: -$percentage);
 }
+
 
 // Map deep get
 // @author Hugo Giraudel
@@ -22,10 +28,16 @@
 // @param {Map} $map - Map
 // @param {Arglist} $keys - Key chain
 // @return {*} - Desired value
+// @function map-deep-get($map, $keys...) {
+//   @each $key in $keys {
+//     $map: map.get($map, $key);
+//   }
+//   @return $map;
+// }
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
-    $map: map-get($map, $key);
+    $map: map.get($map, $key);
   }
-
   @return $map;
 }
+
