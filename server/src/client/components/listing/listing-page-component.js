@@ -34,7 +34,7 @@ import Filters from "../filters/filters"
 import MobileSearchBar from "../filters/mobile-search-bar"
 import Paginate from "../filters/pagination"
 import SortingDropDown from "../filters/sorting-dropDown"
-import styles from "./property-search.module.scss"
+import * as styles from "./property-search.module.scss"
 import { WarningIcons } from "../common/svg-icons"
 
 const modalTypes = {

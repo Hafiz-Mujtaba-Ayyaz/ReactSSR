@@ -13,7 +13,7 @@ import BedFilter from "./beds-filter"
 import CitySheet from "./city-sheet"
 import LocationSelection from "./location-selection"
 import PriceRangeFilter from "./price-range-filter"
-import styles from "./mobile-filters.module.scss"
+import * as styles from "./mobile-filters.module.scss"
 import { useCookies } from "react-cookie"
 import { useHistory } from "react-router"
 import { AreaContext } from "../../App"
@@ -115,7 +115,7 @@ const MobileFilters = forwardRef((props, ref) => {
     <>
       <form className={styles.form}>
         <div className="u-mb16 flex flexBetween">
-          <strong className={styles.purposeLooking}>I am looking to</strong>
+          <strong>I am looking to</strong>
         </div>
         <div className={`${styles.purposeButton} u-mb24 u-spbwx8`}>
           <Button
@@ -140,13 +140,13 @@ const MobileFilters = forwardRef((props, ref) => {
 
         {citySheetState && (
           <Sheet
-            className={styles.filterSheet}
+            // className={styles.filterSheet}
             position="bottom"
             activeState={true}
             setSheetState={() => setCitySheetState(false)}
           >
             <CitySheet
-              className={styles.filterSheet}
+              // className={styles.filterSheet}
               selectedCity={selectedCity}
               selectCity={(city) => {
                 selectCity(city)

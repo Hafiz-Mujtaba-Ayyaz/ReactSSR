@@ -1,4 +1,4 @@
-import styles from "./success-popup.module.scss"
+import * as styles from "./success-popup.module.scss"
 
 const MessagePopup = (props) => {
   const { className = "", heading, description, icon } = props

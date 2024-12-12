@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./link-with-count.module.scss"
+import * as styles from "./link-with-count.module.scss"
 
 const LinkWithCount = ({ className = "", children, count = "", url = "#", ...rest }) => {
   return (

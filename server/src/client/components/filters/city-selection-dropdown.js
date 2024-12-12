@@ -3,7 +3,7 @@ import { capitalizeFirstLetter } from "../../utils/utility"
 import DropdownMenu from "../common/dropdown-menu"
 import CitySelection from "./city-selection"
 import Heading from "../common/heading"
-import styles from "./home-filters.module.scss"
+import * as styles from "./home-filters.module.scss"
 
 const cities = require("../../utils/cities.json")
 
@@ -25,7 +25,7 @@ const CitySelectionDropdown = (props) => {
     >
       <div className={styles.cityDropDown}>
         <CitySelection selectCity={onCitySelection} data={cities} placeholder="Search City" />
-        <Heading className={`${styles.dropDownHeading} u-mb0`} variant="h4">
+        <Heading className={`u-mb0`} variant="h4">
           Popular Cities
         </Heading>
         <div className={`${styles.popularCityList} u-spbwy16`}>

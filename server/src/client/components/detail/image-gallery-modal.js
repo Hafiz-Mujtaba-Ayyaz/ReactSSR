@@ -1,6 +1,6 @@
 import ReactModal from "react-modal"
 import Close from "../common/close-btn"
-import styles from "../common/react-modal.module.scss"
+import * as styles from "../common/react-modal.module.scss"
 
 const GalleryModal = ({ className = "", showModal, onClickClose, children }) => {
   return (

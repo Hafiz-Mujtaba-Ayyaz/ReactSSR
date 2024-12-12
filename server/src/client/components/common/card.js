@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { capitalizeFirstLetter, removeParamsFromUrl } from '../../utils/utility';
-import styles from './card.module.scss';
+import * as styles from './card.module.scss';
 
 const icons = {
   search: (
@@ -25,7 +25,7 @@ function Card(props) {
 
   return (
     <Link href={removeParamsFromUrl('location_names', slug)} prefetch={false}>
-      <p className={styles.Link}>
+      <p>
         <div className={`${styles.card} flexYcenter`}>
           <div className={`${styles.icon} inlineFlex flexYcenter flexXcenter`}>{icons.search}</div>
           <div className={`${styles.filterDes}`}>
@@ -39,7 +39,7 @@ function Card(props) {
                 : ''}
             </div>
             {filtersText.length > 0 && (
-              <div className={`${styles.filters} ${styles.textTruncate}`}>
+              <div className={`${styles.textTruncate}`}>
                 {!filtersText.split(' ').join('') ? '' : filtersText}
               </div>
             )}

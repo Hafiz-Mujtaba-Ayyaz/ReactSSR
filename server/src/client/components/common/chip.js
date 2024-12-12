@@ -1,4 +1,4 @@
-import styles from "../filters/add-keyword-filter.module.scss"
+import * as styles from "../filters/add-keyword-filter.module.scss"
 import Close from "./close-btn"
 
 const Chip = (props) => {

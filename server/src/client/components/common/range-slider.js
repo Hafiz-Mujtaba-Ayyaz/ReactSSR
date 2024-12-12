@@ -1,5 +1,5 @@
 import Slider, { Range } from "rc-slider"
-import styles from "./range-slider.module.scss"
+import * as styles from "./range-slider.module.scss"
 // TODO Add the styles
 // import "rc-slider/assets/index.css"
 

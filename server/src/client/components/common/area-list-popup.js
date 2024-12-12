@@ -1,4 +1,4 @@
-import styles from "./area-list-popup.module.scss"
+import * as styles from "./area-list-popup.module.scss"
 import { MdCheckCircle } from "react-icons/md"
 import Heading from "./heading"
 // import { useCookies } from "react-cookie"

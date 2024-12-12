@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useCookies } from "react-cookie"
 import { CITY_COOKIE_KEY } from "../../utils/constants"
 import AutocompleteSearch from "./autocomplete"
-import styles from "./autocomplete.module.scss"
+import * as styles from "./autocomplete.module.scss"
 
 const cities = require("../../utils/cities.json")
 
@@ -29,7 +29,7 @@ const CitySelection = (props) => {
   }
 
   return (
-    <div className={styles.autocomplete}>
+    <div>
       <AutocompleteSearch
         items={data}
         shouldItemRender={(item, value) => {

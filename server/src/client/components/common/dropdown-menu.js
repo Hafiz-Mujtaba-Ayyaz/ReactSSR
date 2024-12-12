@@ -1,5 +1,5 @@
 import { forwardRef, useImperativeHandle, useRef, useState } from "react"
-import styles from "./dropdown-menu.module.scss"
+import * as styles from "./dropdown-menu.module.scss"
 import { useDetectOutsideClick } from "./useDetectOutsideClick"
 import { MdArrowDropDown } from "react-icons/md"
 

@@ -1,6 +1,6 @@
 import ReactModal from "react-modal"
 import Close from "./close-btn"
-import styles from "./react-modal.module.scss"
+import * as styles from "./react-modal.module.scss"
 
 const Modal = ({ className="", showModal, onClickClose, children }) => {
   return (

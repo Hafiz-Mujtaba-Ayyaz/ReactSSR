@@ -6,7 +6,7 @@ import { sendLead } from "../../services/NetworkRequests"
 import { fireGAEvent, isAdActive, isAndroid, isServer } from "../../utils/utility"
 import Button from "./button"
 import { btn } from "./button.module.scss"
-import styles from "./sticky-bar-bottom.module.scss"
+import * as styles from "./sticky-bar-bottom.module.scss"
 
 const StickyBarBottom = (props) => {
   const { mobileNumber, purpose_id, details } = props

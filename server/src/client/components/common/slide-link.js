@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./slide-link.module.scss"
+import * as styles from "./slide-link.module.scss"
 
 const LocationListSlide = ({ data = [], viewAllLocationText, viewAllLocationLink, onClickOpenSheet, ...props }) => {
   return (

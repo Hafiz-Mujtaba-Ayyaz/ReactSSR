@@ -18,7 +18,7 @@ const app = express();
 //   })
 // );
 
-app.use(express.static('public'));
+app.use(express.static('build'));
 app.get('*', (req, res) => {
   const store = createStore(req);
   const promises = matchRoutes(Routes, req.path)
@@ -49,7 +49,6 @@ app.get('*', (req, res) => {
 });
 
 app.listen(4002, (err) => {
-  console.log('========>', 'here');
   if (err) {
     console.error('Error starting server:', err);
     return;

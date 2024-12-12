@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "./logo"
-import styles from "./navigation-sheet.module.scss"
+import * as styles from "./navigation-sheet.module.scss"
 
 const NavigationSheet = ({ data, onClickAddPropertyModal }) => {
   return (

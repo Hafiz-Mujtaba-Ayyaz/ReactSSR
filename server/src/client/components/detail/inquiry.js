@@ -4,7 +4,7 @@ import { sendEmailLead } from "../../services/NetworkRequests"
 import { isServer } from "../../utils/utility"
 import Button from "../common/button"
 import { error, input } from "../common/input.module.scss"
-import styles from "./inquiry.module.scss"
+import * as styles from "./inquiry.module.scss"
 
 const InquiryForm = (props) => {
   const { emailFormBtnRef, nameInputRef, propertyId, onSuccess, ea_alert_source, url, GACallbackEvent } = props

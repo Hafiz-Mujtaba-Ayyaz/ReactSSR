@@ -1,6 +1,6 @@
 import { MdPhone } from "react-icons/md"
 import Button from "./button"
-import styles from "./show-phone-number.module.scss"
+import * as styles from "./show-phone-number.module.scss"
 
 const ShowPhoneNumber = ({ className = "", GACallback, ...props }) => {
   return (

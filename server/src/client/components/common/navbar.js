@@ -9,7 +9,7 @@ import Button from "./button";
 import { navLinks } from "../component-data";
 import Container from "../base/container";
 import Logo from "./logo";
-import styles from "./navbar.module.scss";
+import * as styles from "./navbar.module.scss";
 import NavigationSheet from "./navigation-sheet";
 import Modal from "./react-modal";
 import Sheet from "./sheet";
@@ -97,7 +97,7 @@ export default function Navbar({ className = "", ...props }) {
           </div> */}
           <Button
             variant={props.addPropertyBtnClass}
-            className={styles.addProperty}
+            // className={styles.addProperty}
             size="sm"
             onClick={() => setShowModal(true)}
           >

@@ -1,4 +1,4 @@
-import styles from "./close.module.scss"
+import * as styles from "./close.module.scss"
 
 const Close = ({ className = "", ...props }) => {
   const { hideLabel = false, ...rest } = props

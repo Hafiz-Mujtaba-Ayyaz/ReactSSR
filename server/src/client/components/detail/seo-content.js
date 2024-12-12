@@ -1,4 +1,4 @@
-import styles from "./seo-content.module.scss"
+import * as styles from "./seo-content.module.scss"
 
 export const SEOContent = ({ content }) => {
   return (

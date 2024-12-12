@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react"
-import styles from "./add-keyword-filter.module.scss"
+import * as styles from "./add-keyword-filter.module.scss"
 import Button from "../common/button"
 import Close from "../common/close-btn"
 import DropdownMenu from "../common/dropdown-menu"
-import btnStyles from "./filter-drop-down-button.module.scss"
+import * as btnStyles from "./filter-drop-down-button.module.scss"
 import { tabContainer } from "./filters.module.scss"
 import TextInput from "../common/input"
 
@@ -20,7 +20,7 @@ const KeywordData = ({ ...props }) => {
     extraProp.onKeyDown = onKeyDown
   }
   return (
-    <div className={styles.addKeyword}>
+    <div>
       <div className={`${styles.keywordInnerWrap} flex u-mb8`}>
         <TextInput
           {...extraProp}

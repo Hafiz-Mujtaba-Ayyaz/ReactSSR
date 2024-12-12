@@ -5,7 +5,7 @@ import Algolia from "../../services/Algolia"
 import Chip from "../common/chip"
 import DropdownMenu from "../common/dropdown-menu"
 import { locationChip } from "./home-filters.module.scss"
-import styles from "./autocomplete.module.scss"
+import * as styles from "./autocomplete.module.scss"
 
 const LocationSelection = (props) => {
   const { city, selected, updateChildLocs, className = "", innerClassName = "", isMobile } = props
@@ -105,7 +105,7 @@ const LocationSelection = (props) => {
       <MdPlace />
       <div className={`${innerClassName} ${!isFocused && selected && selected.length > 0 && styles.slideViewGradiant}`}>
         {isFocused && selected && selected.length > 0 && (
-          <div className={`${styles.chipFixedView}  u-mb8`}>
+          <div className={`u-mb8`}>
             {selected.map((loc) => {
               return (
                 <Chip
@@ -194,7 +194,7 @@ const LocationSelection = (props) => {
         }`}
       >
         {isFocused && selected.length > 0 && (
-          <div className={styles.chipFixedView}>
+          <div>
             {selected.map((loc) => {
               return (
                 <Chip

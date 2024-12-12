@@ -8,7 +8,7 @@ import Container from "../base/container"
 import Button from "./button"
 import { cardSpecs } from "./card-horizontal.module.scss"
 import ShowPhoneNumber from "./show-phone-number"
-import styles from "./sticky-bar-top.module.scss"
+import * as styles from "./sticky-bar-top.module.scss"
 import { Bathroom, Bedroom, LandArea } from "./svg-icons"
 
 const StickyBarTop = (props) => {

@@ -1,4 +1,4 @@
-import styles from "./button.module.scss"
+import * as styles from "./button.module.scss"
 
 const Button = ({
   children,

@@ -1,5 +1,5 @@
 import Heading from "./heading"
-import styles from "./heading-with-count.module.scss"
+import * as styles from "./heading-with-count.module.scss"
 
 const HeadingWithCount = ({ children, className = "", variant = "h2", smallText = "", ...props }) => {
   return (

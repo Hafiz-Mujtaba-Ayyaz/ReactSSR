@@ -19,7 +19,7 @@ import { detail, fixedPriceContent, fixedPriceWrap, priceLoc, unit } from "../co
 import MessagePopup from "../common/success-popup"
 import { Bathroom, Bedroom, LandArea } from "../common/svg-icons"
 import SwiperSlider from "../common/swiper-slider"
-import styles from "./image-gallery-popup.module.scss"
+import * as styles from "./image-gallery-popup.module.scss"
 import InquiryForm from "./inquiry"
 
 const Image = dynamic(() => import("../common/image"), { ssr: false })

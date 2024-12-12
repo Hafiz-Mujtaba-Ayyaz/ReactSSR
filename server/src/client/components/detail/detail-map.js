@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { MdPlace } from "react-icons/md"
 import ReactMapGL, { Marker, NavigationControl, Popup } from "react-map-gl"
-import styles from "./detail-map.module.scss"
+import * as styles from "./detail-map.module.scss"
 
 const DetailPageMap = ({ latitude, longitude, title }) => {
   const screenLte640 = window.matchMedia("(max-width: 640px)").matches

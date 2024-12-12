@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import LayoutGrid from "../base/layout-grid"
 import Heading from "./heading"
-import styles from "./link-grid.module.scss"
+import * as styles from "./link-grid.module.scss"
 import LinkWithCount from "./link-with-count"
 import Skeleton from "./skeleton"
 

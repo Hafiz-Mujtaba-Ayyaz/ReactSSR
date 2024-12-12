@@ -3,9 +3,9 @@ import { priceSliderRangesHash, priceStepsMappingsBuy, priceStepsMappingsRent } 
 import { formatPrice } from "../../utils/utility"
 import Button from "../common/button"
 import DropdownMenu from "../common/dropdown-menu"
-import btnStyles from "./filter-drop-down-button.module.scss"
+import * as btnStyles from "./filter-drop-down-button.module.scss"
 import { tabContainer } from "./home-filters.module.scss"
-import styles from "./price-range-filter.module.scss"
+import * as styles from "./price-range-filter.module.scss"
 import RangeSlider from "../common/range-slider"
 
 const PriceRangeData = (props) => {

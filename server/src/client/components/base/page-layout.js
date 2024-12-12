@@ -3,7 +3,7 @@ import Footer from "../common/footer";
 import Heading from "../common/heading";
 import HeadingWithCount from "../common/heading-with-count";
 import Navbar from "../common/navbar";
-import styles from "./page-layout.module.scss";
+import * as styles from "./page-layout.module.scss";
 import { useEffect } from "react";
 import Fonts from "../common/font";
 import { Helmet } from "react-helmet";

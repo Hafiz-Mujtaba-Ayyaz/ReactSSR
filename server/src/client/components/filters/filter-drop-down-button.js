@@ -1,5 +1,5 @@
 import Button from "./button"
-import styles from "./filter-drop-down-button.module.scss"
+import * as styles from "./filter-drop-down-button.module.scss"
 
 const FilterDropdownButton = () => {
   return (

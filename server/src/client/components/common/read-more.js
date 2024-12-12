@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { MdExpandMore } from "react-icons/md"
-import styles from "./read-more.module.scss"
+import * as styles from "./read-more.module.scss"
 
 const ReadMore = ({ children, maxCharacterCount = 50 }) => {
   const [showMore, setShowMore] = useState(true)

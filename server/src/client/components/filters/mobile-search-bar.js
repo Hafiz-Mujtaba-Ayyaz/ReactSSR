@@ -4,7 +4,7 @@ import { MdSearch } from "react-icons/md"
 import { CITY_COOKIE_KEY } from "../../utils/constants"
 import CitySheet from "./city-sheet"
 import MobileFilters from "./mobile-filters"
-import styles from "./mobile-search-bar.module.scss"
+import * as styles from "./mobile-search-bar.module.scss"
 import SearchInCity from "./search-in-city"
 import Sheet from "../common/sheet"
 

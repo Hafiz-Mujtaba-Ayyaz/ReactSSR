@@ -1,9 +1,6 @@
 @use "../../styles/variables" as *;
 @use "../../styles/functions" as *;
 
-.autocomplete {
-  // height: 180px;
-}
 .menuList {
   max-height: 320px;
   overflow-y: auto;

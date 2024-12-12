@@ -10,7 +10,7 @@ import AreaRangeFilter from "./area-range-filter"
 import BedFilter from "./beds-filter"
 import Button from "../common/button"
 import CitySelectionDropdown from "./city-selection-dropdown"
-import styles from "./home-filters.module.scss"
+import * as styles from "./home-filters.module.scss"
 // import { AreaContext } from "../../pages/app"
 import { useHistory } from "react-router-dom";
 import { AreaContext } from "../../App"
@@ -119,7 +119,7 @@ const HomeFilters = ({ className = "", showMoreFilter = true, switchPurpose = fa
             isMobile={props.isMobile}
           />
         </div>
-        <Button className={styles.searchBtn} variant="primaryBtn" size="lg" onClick={() => search()}>
+        <Button variant="primaryBtn" size="lg" onClick={() => search()}>
           Search
         </Button>
       </div>

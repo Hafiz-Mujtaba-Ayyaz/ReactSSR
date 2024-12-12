@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { MdExpandLess, MdMail, MdPlace } from "react-icons/md";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import Container from "../base/container";
-import styles from "./footer.module.scss";
+import * as styles from "./footer.module.scss";
 import LayoutGrid from "../base/layout-grid";
 import Logo from "./logo";
 import { Telephone, Facebook, Twitter, LinkedIn } from "./svg-icons";

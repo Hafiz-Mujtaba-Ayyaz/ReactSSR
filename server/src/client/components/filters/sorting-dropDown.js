@@ -3,7 +3,7 @@ import { HiSortDescending } from "react-icons/hi"
 import { sortingList } from "../../utils/constants"
 import { addParamToUrl, removeParamsFromUrl } from "../../utils/utility"
 import DropdownMenu from "../common/dropdown-menu"
-import styles from "./sorting-dropdown.module.scss"
+import * as styles from "./sorting-dropdown.module.scss"
 import { useHistory } from "react-router"
 
 const SortingDropDown = (props) => {

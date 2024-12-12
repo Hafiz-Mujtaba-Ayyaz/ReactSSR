@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import Heading from "./heading"
 import LinkWithCount from "./link-with-count"
-import styles from "./sheet-link.module.scss"
+import * as styles from "./sheet-link.module.scss"
 
 const SheetLink = ({ heading = "", data = {}, viewAllLocationText = "" }) => {
   useEffect(() => {

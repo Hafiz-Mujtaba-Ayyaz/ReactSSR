@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react"
 import { BEDS_FILTER_DATA } from "../../utils/constants"
 import { getBedsString } from "../../utils/utility"
-import styles from "./beds-filter.module.scss"
+import * as styles from "./beds-filter.module.scss"
 import Button from "../common/button"
 import DropdownMenu from "../common/dropdown-menu"
-import btnStyles from "./filter-drop-down-button.module.scss"
+import * as btnStyles from "./filter-drop-down-button.module.scss"
 
 const BedroomFilters = (props) => {
   const { selected, updateBedroomFilter } = props

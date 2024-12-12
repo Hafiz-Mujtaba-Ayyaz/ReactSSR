@@ -1,4 +1,4 @@
-import styles from "./search-in-city.module.scss"
+import * as styles from "./search-in-city.module.scss"
 import { MdArrowDropDown } from "react-icons/md"
 
 const SearchInCity = (props) => {

@@ -3,7 +3,7 @@ import React from "react";
 import { MdExpandLess, MdMail, MdPlace } from "react-icons/md";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 // import Container from "../base/container"
-import styles from "../variables/footer.module.scss";
+import * as styles from "../variables/footer.module.scss";
 // import LayoutGrid from "../base/layout-grid";
 // import Logo from "./logo";
 // import { Telephone, Facebook, Twitter, LinkedIn } from "../icons/svg-icons";
@@ -598,7 +598,7 @@ const Footer = () => {
           );
         })}
       </div>
-  
+
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
         <div>
           <Link to="/" className="block">
@@ -665,7 +665,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-  
+
       <div className="flex justify-between items-center">
         <div>
           <div className="flex space-x-4 mb-2">
@@ -690,7 +690,7 @@ const Footer = () => {
       </div>
     </Container>
   </div>
-  
+
   );
 }
 

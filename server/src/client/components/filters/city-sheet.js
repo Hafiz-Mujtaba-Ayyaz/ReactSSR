@@ -1,7 +1,7 @@
 import { useCookies } from "react-cookie"
 import { FaCaretUp, FaSearch } from "react-icons/fa"
 import { CITY_COOKIE_KEY } from "../../utils/constants"
-import styles from "./city-sheet.module.scss"
+import * as styles from "./city-sheet.module.scss"
 import Heading from "../common/heading"
 import { headingLabel } from "./mobile-filters.module.scss"
 import TextInput from "../../components/common/input"

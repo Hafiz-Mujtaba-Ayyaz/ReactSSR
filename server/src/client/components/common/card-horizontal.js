@@ -29,7 +29,7 @@ import ContactDetail from "../contactus/contact-detail";
 import { galleryForm } from "../detail/image-gallery-popup.module.scss";
 import InquiryForm from "../detail/inquiry";
 import Button from "./button";
-import styles from "./card-horizontal.module.scss";
+import * as styles from "./card-horizontal.module.scss";
 import Heading from "./heading";
 import Price from "./price";
 import MessagePopup from "./success-popup";

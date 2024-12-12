@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import Close from "./close-btn"
 import { crossIcon } from "./navigation-sheet.module.scss"
-import styles from "./sheet.module.scss"
+import * as styles from "./sheet.module.scss"
 
 const Sheet = (props) => {
   const { className = "", children, position = "right", activeState, autoclose = false, setSheetState } = props

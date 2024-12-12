@@ -10,7 +10,7 @@ import {
 } from "../../utils/constants";
 import DropdownMenu from "../common/dropdown-menu";
 import { tabContainer } from "./home-filters.module.scss";
-import styles from "./property-type-tab.module.scss";
+import * as styles from "./property-type-tab.module.scss";
 
 const TabData = (props) => {
   const {
@@ -105,7 +105,7 @@ export default function PropertyTypeTab({
   ) : (
     <DropdownMenu
       ref={dRef}
-      classNameInner={styles.tabContainer}
+      // classNameInner={styles.tabContainer}
       buttonText={`${
         selectedType.parentId &&
         selectedType.id &&

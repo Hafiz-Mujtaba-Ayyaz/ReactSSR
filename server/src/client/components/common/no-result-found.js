@@ -1,4 +1,4 @@
-import styles from "./no-result-found.module.scss"
+import * as styles from "./no-result-found.module.scss"
 
 const NoResultFound = (props) => {
   const { className="", searchIcon, crossIcon, text, description } = props

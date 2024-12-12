@@ -16,7 +16,7 @@ const Home = (props) => {
       <>
         <p style={{ color: "yellow" }}>hello</p>
         <PageLayout
-          className={homePage}
+          // className={homePage}
           description={
             "Browse property on Lamudi.pk the best real estate and property website in Pakistan. Search houses, plots, new projects, commercial plots, villas, flats, ready to move apartments for rent and sale in Karachi Lahore Islamabad and all over Pakistan."
           }
@@ -26,7 +26,7 @@ const Home = (props) => {
             <BannerComponent isMobile={isMobile} purpose={rentSlug} />
           }
           bannerComponentPlacement="left"
-        > 
+        >
         <Container>
           <HomeScreen
               allLinks={allLinks}

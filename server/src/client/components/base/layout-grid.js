@@ -1,4 +1,4 @@
-import styles from "./layout-grid.module.scss"
+import * as styles from "./layout-grid.module.scss"
 
 export default function LayoutGrid({ children, classname = "", gridColumns = "", rowGap = "", style = {} }) {
   return (

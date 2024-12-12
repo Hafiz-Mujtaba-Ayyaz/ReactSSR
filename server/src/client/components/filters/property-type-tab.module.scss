@@ -55,10 +55,8 @@
       padding-bottom: 0;
     }
 
-    [class^=".rc-tabs-top .rc-tabs-ink-bar, .rc-tabs-bottom .rc-tabs-ink-bar"]{
+    [class^=".rc-tabs-top .rc-tabs-ink-bar, .rc-tabs-bottom .rc-tabs-ink-bar"] {
       height: 2px;
     }
   }
-
-
 }

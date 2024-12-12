@@ -9,7 +9,7 @@ import StickyBar from "../common/sticky-bar"
 import StickyBarBottom from "../common/sticky-bar-bottom"
 import StickyBarTop from "../common/sticky-bar-top"
 import { Bathroom, Bedroom, LandArea } from "../common/svg-icons"
-import styles from "./details-description.module.scss"
+import * as styles from "./details-description.module.scss"
 import { getPruposeObject, getTimeDifference } from "../../utils/utility"
 
 const DetailsDescription = (props) => {

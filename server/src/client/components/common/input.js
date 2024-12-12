@@ -1,4 +1,4 @@
-import styles from "./input.module.scss"
+import * as styles from "./input.module.scss"
 
 const TextInput = ({ type = "text", className = "", rows = "4", ...props }) => {
   return (

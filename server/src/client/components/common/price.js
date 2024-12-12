@@ -1,4 +1,4 @@
-import styles from "./price.module.scss"
+import * as styles from "./price.module.scss"
 import Heading from "./heading"
 import { formatPrice } from "../../utils/utility"
 

@@ -1,4 +1,5 @@
-import styles from "./contact-detail.module.scss"
+import React from "react"
+import * as styles from "./contact-detail.module.scss"
 import Heading from "../common/heading"
 import { fireGAEvent } from "../../utils/utility"
 import { useContext } from "react"
@@ -64,7 +65,7 @@ const ContactDetail = ({ contactPerson = "", mobile = "", phone = "", purpose, p
       </div>
       <div className={`${styles.contactList} u-spbwy24`}>
         {mobileExist ? (
-          <div className={styles.listItem}>
+          <div>
             {icons.mobile}
             <div className={styles.contactNumList}>
               <span className={styles.heading}>Call Mobile</span>
@@ -94,7 +95,7 @@ const ContactDetail = ({ contactPerson = "", mobile = "", phone = "", purpose, p
         ) : null}
 
         {phoneExist ? (
-          <div className={styles.listItem} id="popup-contact-mobile">
+          <div id="popup-contact-mobile">
             {icons.phone}
             <div className={styles.contactNumList}>
               <span className={styles.heading}>Call Phone</span>

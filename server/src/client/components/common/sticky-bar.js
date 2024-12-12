@@ -1,4 +1,4 @@
-import styles from "./sticky-pricebar.module.scss"
+import * as styles from "./sticky-pricebar.module.scss"
 
 const StickyBar = ({placement = "top", sticky = false, children}) => {
   return (

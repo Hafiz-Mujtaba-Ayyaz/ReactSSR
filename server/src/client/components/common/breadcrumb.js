@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Container from "../base/container";
-import styles from "./breadcrumb.module.scss";
+import * as styles from "./breadcrumb.module.scss";
 import Router from "next/router";
 
 const Breadcrumb = (props) => {

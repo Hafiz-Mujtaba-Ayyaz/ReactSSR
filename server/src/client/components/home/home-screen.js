@@ -7,7 +7,7 @@ import Heading from "../common/heading"
 import LinkGrid from "../common/link-grid"
 import Sheet from "../common/sheet"
 import SheetLink from "../common/sheet-link"
-import styles from "../home/home-screen.module.scss"
+import * as styles from "../home/home-screen.module.scss"
 import RecentSearches from "../listing/recent-searches"
 import ViewedProperties from "../listing/viewed-properties"
 

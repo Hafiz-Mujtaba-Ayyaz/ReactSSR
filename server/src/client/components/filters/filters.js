@@ -14,7 +14,7 @@ import PropertyTypeTab from "./property-type-tab"
 import AddKeywordFilter from "./add-keyword-filter"
 import AreaRangeFilter from "./area-range-filter"
 import BedFilter from "./beds-filter"
-import styles from "./filters.module.scss"
+import * as styles from "./filters.module.scss"
 import { locationChipList, locationField } from "./home-filters.module.scss"
 import { AreaContext } from "../../pages/_app"
 
@@ -139,7 +139,7 @@ const Filters = ({ className = "", initialFilters }) => {
             />
           </div>
 
-          <Button className={styles.searchBtn} variant="primaryBtn" onClick={search}>
+          <Button variant="primaryBtn" onClick={search}>
             Search
           </Button>
         </div>
