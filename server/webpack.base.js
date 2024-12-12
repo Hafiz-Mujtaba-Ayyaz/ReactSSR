@@ -1,42 +1,68 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//
+// style files regexes
+const cssRegex = /\.css$/;
+const cssModuleRegex = /\.module\.css$/;
+const sassRegex = /\.(scss|sass)$/;
+const sassModuleRegex = /\.module\.(scss|sass)$/;
 
 module.exports = {
   mode: 'development',
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
   module: {
     rules: [
-      // {
-      //   test: /\.css$/,
-      //   use: ['ignore-loader'], 
-      // },
       {
         test: /\.(js|jsx)$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
-        options: {
-          presets: [
-            ['@babel/preset-env', { targets: { browsers: ['last 2 versions'] } }],
-            ['@babel/preset-react', { runtime: 'automatic' }]
-          ]
-        }
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
       },
-      // {
-      //   test: /\.css$/,
-      //   include: /node_modules/,
-      //   use: ['null-loader']
-      // },
+
       {
-        test: /\.css$/,
-        exclude: /node_modules/,
+        test: sassRegex,
+        exclude: sassModuleRegex,
         use: [
           'style-loader',
-          'css-loader',
-        ]
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                mode: 'icss',
+              },
+            },
+          },
+          'sass-loader',
+        ],
       },
       {
-        test: /\.scss$/,
+        test: sassModuleRegex,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                mode: 'local',
+                // localIdentName: '[name]__[local]--[hash:base64:5]',
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+                localIdentContext: path.resolve(__dirname, 'src'),
+                // namedExport: false,
+              },
+            },
+          },
+          'sass-loader',
+        ],
+      },
+
+      {
+        test: cssRegex,
+        exclude: cssModuleRegex,
         use: [
           'style-loader',
           {
@@ -44,23 +70,36 @@ module.exports = {
             options: {
               modules: {
                 mode: 'icss',
-                localIdentName: '[name]__[local]___[hash:base64:5]',
-                localIdentContext: path.resolve(__dirname, 'src')
               },
-              importLoaders: 1
-            }
+            },
           },
-          'sass-loader'
-          // {
-          //   loader: 'sass-loader',
-          //   options: {
-          //     sassOptions: {
-          //       // quietDeps: true
-          //     }
-          //   }
-          // }
-        ]
-      }
-    ]
-  }
+        ],
+      },
+      {
+        test: cssModuleRegex,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                localIdentName: '[name]__[local]__[hash:base64:5]',
+              },
+            },
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      // chunkFilename: '[id].css',
+    }),
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss', '.css'],
+  },
+  devtool: 'source-map',
 };

@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
-import { capitalizeFirstLetter, removeParamsFromUrl } from "../../utils/utility"
-import styles from "./card.module.scss"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { capitalizeFirstLetter, removeParamsFromUrl } from '../../utils/utility';
+import styles from './card.module.scss';
 
 const icons = {
   search: (
@@ -11,38 +12,42 @@ const icons = {
       />
     </svg>
   ),
-}
+};
 
-const Card = (props) => {
-  const { data } = props
-  const { slug, type, purpose, price = "", area = "", room = "", beds, areaUnit = "", location_names } = data
-  const filtersText = `${beds ? beds + " beds," : ""} ${price ? "Price PKR: " + price + "," : ""} ${
-    !!area ? area + ` ${areaUnit}` : ""
-  } ${room ? room + " room" : ""} `
+function Card(props) {
+  const { data } = props;
+  const {
+    slug, type, purpose, price = '', area = '', room = '', beds, areaUnit = '', location_names,
+  } = data;
+  const filtersText = `${beds ? `${beds} beds,` : ''} ${price ? `Price PKR: ${price},` : ''} ${
+    area ? `${area} ${areaUnit}` : ''
+  } ${room ? `${room} room` : ''} `;
 
   return (
-    <Link href={removeParamsFromUrl("location_names", slug)} prefetch={false}>
+    <Link href={removeParamsFromUrl('location_names', slug)} prefetch={false}>
       <p className={styles.Link}>
         <div className={`${styles.card} flexYcenter`}>
           <div className={`${styles.icon} inlineFlex flexYcenter flexXcenter`}>{icons.search}</div>
           <div className={`${styles.filterDes}`}>
             <div className={`${styles.text} ${styles.textTruncate}`}>{`${type} ${purpose} `}</div>
             <div className={`${styles.location} ${styles.textTruncate}`}>
-              In {capitalizeFirstLetter(data.loc)}
+              In
+              {' '}
+              {capitalizeFirstLetter(data.loc)}
               {location_names && location_names.length >= 1
-                ? `, ${location_names.map((loc) => loc.replace("-", " ")).join(", ")}`
-                : ""}
+                ? `, ${location_names.map((loc) => loc.replace('-', ' ')).join(', ')}`
+                : ''}
             </div>
             {filtersText.length > 0 && (
               <div className={`${styles.filters} ${styles.textTruncate}`}>
-                {!filtersText.split(" ").join("") ? "" : filtersText}
+                {!filtersText.split(' ').join('') ? '' : filtersText}
               </div>
             )}
           </div>
         </div>
       </p>
     </Link>
-  )
+  );
 }
 
-export default Card
+export default Card;

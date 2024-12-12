@@ -1,13 +1,14 @@
 {
   "name": "react-ssr",
+  "root": true,
   "version": "1.0.0",
   "description": "Server side rendering project",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
-    "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
-    "dev:build-server": "webpack --config webpack.server.js --watch",
-    "dev:build-client": "webpack --config webpack.client.js --watch"
+    "predev": "npm-run-all -p dev:build-server dev:build-client",
+    "dev": "nodemon --watch build --exec \"node build/server.bundle.js\"",
+    "dev:build-server": "webpack --config webpack.server.js",
+    "dev:build-client": "webpack --config webpack.client.js"
   },
   "author": "",
   "license": "ISC",
@@ -62,9 +63,9 @@
     "postcss": "^8.4.49",
     "postcss-loader": "^8.1.1",
     "sass": "^1.82.0",
-    "sass-loader": "^16.0.3",
+    "sass-loader": "^16.0.4",
     "style-loader": "^4.0.0",
-    "webpack": "^5.97.0",
+    "webpack": "^5.97.1",
     "webpack-cli": "^5.1.4"
   }
 }

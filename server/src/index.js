@@ -22,23 +22,21 @@ app.use(express.static('public'));
 app.get('*', (req, res) => {
   const store = createStore(req);
   const promises = matchRoutes(Routes, req.path)
-    .map(({ route }) => {
-      return route.loadData ? route.loadData(store) : null;
-    })
-    .map(promise => {
+    .map(({ route }) => (route.loadData ? route.loadData(store) : null))
+    .map((promise) => {
       if (promise) {
         return new Promise((resolve, reject) => {
           promise.then(resolve).catch(resolve);
         });
       }
-    }).filter(promise => promise);
+    }).filter((promise) => promise);
 
   const route = matchRoutes(Routes, req.path)[1];
 
   Promise.all(promises).then(() => {
     const context = {};
     const content = renderer(req, store, context, route);
-    console.log('context', context)
+    console.log('context', context);
 
     if (context.url) {
       return res.redirect(301, context.url);
@@ -50,6 +48,17 @@ app.get('*', (req, res) => {
   });
 });
 
-app.listen(4002, () => {
+app.listen(4002, (err) => {
+  console.log('========>', 'here');
+  if (err) {
+    console.error('Error starting server:', err);
+    return;
+  }
   console.log('Listening on port 4002');
+}).on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error('Port 4002 is already in use');
+  } else {
+    console.error('Unknown error:', err);
+  }
 });
