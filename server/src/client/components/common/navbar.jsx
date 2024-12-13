@@ -1,21 +1,21 @@
-import { Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 // import { useCookies } from "react-cookie"
-import { MdAddCircle, MdArrowDropDown, MdMenu } from "react-icons/md";
+import { MdAddCircle, MdArrowDropDown, MdMenu } from 'react-icons/md';
 // import { AREA_COOKIE_KEY } from "../../utils/constants"
-import AddProperty from "../sell/add-property";
-import AreaList from "./area-list-popup";
-import Button from "./button";
-import { navLinks } from "../component-data";
-import Container from "../base/container";
-import Logo from "./logo";
-import * as styles from "./navbar.module.scss";
-import NavigationSheet from "./navigation-sheet";
-import Modal from "./react-modal";
-import Sheet from "./sheet";
-import { AreaContext } from "../../App";
+import AddProperty from '../sell/add-property';
+import AreaList from './area-list-popup';
+import Button from './button';
+import { navLinks } from '../component-data';
+import Container from '../base/container';
+import Logo from './logo';
+import * as styles from './navbar.module.scss';
+import NavigationSheet from './navigation-sheet';
+import Modal from './react-modal';
+import Sheet from './sheet';
+import { AreaContext } from '../../App';
 
-export default function Navbar({ className = "", ...props }) {
+export default function Navbar({ className = '', ...props }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const [cookie, setCookie] = useCookies([AREA_COOKIE_KEY])
   const [areaUnit, setAreaUnit] = useContext(AreaContext);
@@ -33,8 +33,8 @@ export default function Navbar({ className = "", ...props }) {
   // )
 
   const [selectedArea, selectArea] = useState({
-    short: "Marla",
-    value: "Marla",
+    short: 'Marla',
+    value: 'Marla',
   });
 
   // Popup open State
@@ -60,30 +60,27 @@ export default function Navbar({ className = "", ...props }) {
         <Link to="/" prefetch={false}>
           <p>
             <Logo
-              variant={props.bannerless ? "colored" : "white"}
+              variant={props.bannerless ? 'colored' : 'white'}
               className="logo"
             />
           </p>
         </Link>
         <nav className={styles.mainNav}>
-          {navLinks.map(({ text, link, external, ...rest }, i) => {
-            return (
-              <div>
-                {external ? (
-                  <a href={link}>{text}</a>
-                ) : (
-                  <Link to={link} key={i} {...rest} prefetch={false}>
-                    <p
-                    // TODO import pathname from the right place based on server or client
-                    // className={router.pathname === link && styles.selected}
-                    >
-                      {text}
-                    </p>
-                  </Link>
-                )}
-              </div>
-            );
-          })}
+          {navLinks.map(({
+            text, link, external, ...rest
+          }, i) => (
+            <div>
+              {external ? (
+                <a href={link}>{text}</a>
+              ) : (
+                <Link to={link} key={i} {...rest} prefetch={false}>
+                  <p>
+                    {text}
+                  </p>
+                </Link>
+              )}
+            </div>
+          ))}
         </nav>
         <div
           className={`${styles.areaAddProperty} flex flex-ycenter u-spbwx8`.trim()}
@@ -101,7 +98,9 @@ export default function Navbar({ className = "", ...props }) {
             size="sm"
             onClick={() => setShowModal(true)}
           >
-            <MdAddCircle size="1.5em" /> Add Property
+            <MdAddCircle size="1.5em" />
+            {' '}
+            Add Property
           </Button>
         </div>
         <button className={styles.navigationIcon} onClick={triggerMenu}>

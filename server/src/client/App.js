@@ -1,13 +1,14 @@
 import React, { useEffect, useState, createContext } from 'react';
 import { renderRoutes } from 'react-router-config';
 import NProgress from 'nprogress';
-import ReactGA from 'react-ga4';
+// import ReactGA from 'react-ga4';
+import { Helmet } from 'react-helmet';
 import Header from './components/Header';
 import './styles/globals.scss';
 import './styles/page-styles.scss';
 import './styles/tabs.scss';
 import './styles/utils.modules.scss';
-import { Helmet } from 'react-helmet';
+import Container from './components/base/container';
 
 // Contexts
 export const AreaContext = createContext();
@@ -17,28 +18,28 @@ NProgress.configure({ showSpinner: false });
 
 function Root({ route }) {
   const [areaUnit, setAreaUnit] = useState();
-  const [GAHash, setGAHash] = useState({});
+  // const [GAHash, setGAHash] = useState({});
 
-  useEffect(() => {
-    if (process.env.REACT_APP_GA_TRACKING_ID) {
-      ReactGA.initialize([{ trackingId: process.env.REACT_APP_GA_TRACKING_ID }]);
-    }
-
-    window.OneSignal = window.OneSignal || [];
-    OneSignal.push(() => {
-      OneSignal.init({
-        appId: 'e06678e5-d595-4177-996b-4ea59f7d1b16',
-        notifyButton: {
-          enable: true,
-        },
-        allowLocalhostAsSecureOrigin: true,
-      });
-    });
-
-    return () => {
-      window.OneSignal = undefined;
-    };
-  }, []);
+  // useEffect(() => {
+  //   if (process.env.REACT_APP_GA_TRACKING_ID) {
+  //     ReactGA.initialize([{ trackingId: process.env.REACT_APP_GA_TRACKING_ID }]);
+  //   }
+  //
+  //   window.OneSignal = window.OneSignal || [];
+  //   OneSignal.push(() => {
+  //     OneSignal.init({
+  //       appId: 'e06678e5-d595-4177-996b-4ea59f7d1b16',
+  //       notifyButton: {
+  //         enable: true,
+  //       },
+  //       allowLocalhostAsSecureOrigin: true,
+  //     });
+  //   });
+  //
+  //   return () => {
+  //     window.OneSignal = undefined;
+  //   };
+  // }, []);
 
   useEffect(() => {
     const handleStart = () => NProgress.start();
@@ -63,8 +64,10 @@ function Root({ route }) {
         <link rel="stylesheet" href="main.css" />
       </Helmet>
       <AreaContext.Provider value={[areaUnit, setAreaUnit]}>
-        <Header />
-        {renderRoutes(route.routes)}
+        <Container>
+          <Header />
+          {renderRoutes(route.routes)}
+        </Container>
       </AreaContext.Provider>
     </>
     // </GAContext.Provider>

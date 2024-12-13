@@ -1,5 +1,9 @@
-const Logo = ({ className = "", variant = "white", width = 104, ...props }) => {
-  const opts = { primaryColor: "#ff8700", secondaryColor: variant === "white" ? "#fff" : "#2a65d3" }
+import React from 'react';
+
+function Logo({
+  className = '', variant = 'white', width = 104, ...props
+}) {
+  const opts = { primaryColor: '#ff8700', secondaryColor: variant === 'white' ? '#fff' : '#2a65d3' };
   return (
     <svg className={`${className}`.trim()} width={width} viewBox="0 0 104 28" {...props}>
       <path
@@ -15,7 +19,7 @@ const Logo = ({ className = "", variant = "white", width = 104, ...props }) => {
         fill={opts.primaryColor}
       />
     </svg>
-  )
+  );
 }
 
-export default Logo
+export default Logo;

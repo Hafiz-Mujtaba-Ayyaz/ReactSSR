@@ -1,4 +1,4 @@
-import { useRef } from "react"
+import React, { useRef } from "react"
 import { capitalizeFirstLetter } from "../../utils/utility"
 import DropdownMenu from "../common/dropdown-menu"
 import CitySelection from "./city-selection"

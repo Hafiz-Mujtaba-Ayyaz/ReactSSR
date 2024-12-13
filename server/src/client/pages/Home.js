@@ -14,9 +14,6 @@ function Home(props) {
 
   return (
     <div>
-      <Helmet>
-        <link rel="stylesheet" href="main.css" />
-      </Helmet>
       <p style={{ color: 'yellow' }}>hello</p>
       <PageLayout
         // className={homePage}

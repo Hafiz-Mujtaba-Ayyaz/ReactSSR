@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useContext, useEffect } from "react"
 import { useCookies } from "react-cookie"
 import { MdKeyboardArrowDown } from "react-icons/md"
@@ -125,11 +126,9 @@ const HomeFilters = ({ className = "", showMoreFilter = true, switchPurpose = fa
       </div>
 
       <div
-        className={`${styles.moreFiltersList} ${
-          moreFilters ? "flex" : showMoreFilter ? styles.hideOthersFilters : ""
-        } ${
-          oddTypes.indexOf(selectedType.slug.toLowerCase()) == -1 ? "" : styles.hideBedsFilter
-        } flex-ycenter u-spbwx8`}
+        className={`${styles.moreFiltersList} ${moreFilters ? "flex" : showMoreFilter ? styles.hideOthersFilters : ""
+          } ${oddTypes.indexOf(selectedType.slug.toLowerCase()) == -1 ? "" : styles.hideBedsFilter
+          } flex-ycenter u-spbwx8`}
       >
         <div className={`${styles.dropdownFilter} ${styles.purposeDropDown}`}>
           <PropertyTypeTab selectedType={selectedType} selectType={selectType} />
