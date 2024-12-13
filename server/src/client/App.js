@@ -7,6 +7,7 @@ import './styles/globals.scss';
 import './styles/page-styles.scss';
 import './styles/tabs.scss';
 import './styles/utils.modules.scss';
+import { Helmet } from 'react-helmet';
 
 // Contexts
 export const AreaContext = createContext();
@@ -14,7 +15,7 @@ export const GAContext = createContext();
 
 NProgress.configure({ showSpinner: false });
 
-const Root = ({ route }) => {
+function Root({ route }) {
   const [areaUnit, setAreaUnit] = useState();
   const [GAHash, setGAHash] = useState({});
 
@@ -24,7 +25,7 @@ const Root = ({ route }) => {
     }
 
     window.OneSignal = window.OneSignal || [];
-    OneSignal.push(function () {
+    OneSignal.push(() => {
       OneSignal.init({
         appId: 'e06678e5-d595-4177-996b-4ea59f7d1b16',
         notifyButton: {
@@ -56,21 +57,24 @@ const Root = ({ route }) => {
 
   return (
     // <CookiesProvider>
-      <GAContext.Provider value={[GAHash, setGAHash]}>
-        <AreaContext.Provider value={[areaUnit, setAreaUnit]}>
-          <Header />
-          {renderRoutes(route.routes)}
-        </AreaContext.Provider>
-      </GAContext.Provider>
+    // <GAContext.Provider value={[GAHash, setGAHash]}>
+    <>
+      <Helmet>
+        <link rel="stylesheet" href="main.css" />
+      </Helmet>
+      <AreaContext.Provider value={[areaUnit, setAreaUnit]}>
+        <Header />
+        {renderRoutes(route.routes)}
+      </AreaContext.Provider>
+    </>
+    // </GAContext.Provider>
     // </CookiesProvider>
   );
-};
+}
 
 export default {
   component: Root,
 };
-
-
 
 // import React from 'react';
 // import { renderRoutes } from 'react-router-config';

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-const Header = ({ auth }) => {
+function Header({ auth }) {
   const authButton = auth ? (
     <a href="/api/logout">Logout</a>
   ) : (
@@ -16,7 +16,7 @@ const Header = ({ auth }) => {
           React SSR
         </Link>
         <ul className="right">
-          <li className='text-5xl'>
+          <li className="text-5xl">
             <Link to="/users">Users</Link>
           </li>
           <li>
@@ -27,7 +27,7 @@ const Header = ({ auth }) => {
       </div>
     </nav>
   );
-};
+}
 
 function mapStateToProps({ auth }) {
   return { auth };

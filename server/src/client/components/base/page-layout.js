@@ -1,49 +1,48 @@
-import Container from "./container";
-import Footer from "../common/footer";
-import Heading from "../common/heading";
-import HeadingWithCount from "../common/heading-with-count";
-import Navbar from "../common/navbar";
-import * as styles from "./page-layout.module.scss";
-import { useEffect } from "react";
-import Fonts from "../common/font";
-import { Helmet } from "react-helmet";
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import Container from './container';
+import Footer from '../common/footer';
+import Heading from '../common/heading';
+import HeadingWithCount from '../common/heading-with-count';
+import Navbar from '../common/navbar';
+import * as styles from './page-layout.module.scss';
+import Fonts from '../common/font';
 
-const PageLayout = (props) => {
+function PageLayout(props) {
   const {
     count = 12345,
-    className = "",
+    className = '',
     children,
-    pageTitle = "",
-    pageSubTitle = "",
-    headTitle = "",
+    pageTitle = '',
+    pageSubTitle = '',
+    headTitle = '',
     bannerless = false,
     location_breadcrumb,
     bannerComponent = null,
-    bannerComponentPlacement = "right",
+    bannerComponentPlacement = 'right',
     backButton = null,
-    navBarIconPlacement = "left",
-    containerClass = "",
-    navBarClassName = "",
+    navBarIconPlacement = 'left',
+    containerClass = '',
+    navBarClassName = '',
     description,
-    verticalAlignment = "end",
+    verticalAlignment = 'end',
     prevPageLink,
     nextPageLink,
     resolvedUrl,
     canonical,
     socialUrl,
   } = props;
-  const hamburgerColor = bannerless ? "#000" : "#fff";
+  const hamburgerColor = bannerless ? '#000' : '#fff';
   const navbarStyles = { paddingTop: 8, paddingBottom: 8 };
-  const addPropertyBtnClass = bannerless ? "primaryGhostBtn" : "primaryBtn";
+  const addPropertyBtnClass = bannerless ? 'primaryGhostBtn' : 'primaryBtn';
   const navbarContainer = bannerless
     ? styles.bannerLessContainer
     : styles.bannerContainer;
 
-
   useEffect(() => {
     try {
       Fonts();
-    } catch (err) {}
+    } catch (err) { }
   }, []);
 
   return (
@@ -75,7 +74,7 @@ const PageLayout = (props) => {
           <Navbar
             hamburgerColor={hamburgerColor}
             addPropertyBtnClass={addPropertyBtnClass}
-            style={bannerless ? navbarStyles : ""}
+            style={bannerless ? navbarStyles : ''}
             className={`${navbarContainer} ${navBarClassName}`}
             backButton={backButton}
             containerClass={containerClass}
@@ -99,15 +98,12 @@ const PageLayout = (props) => {
           />
           {pageTitle ? (
             <Container>
-              {bannerComponentPlacement === "right" ? (
+              {bannerComponentPlacement === 'right' ? (
                 <div
-                  className={`${
-                    verticalAlignment === "start" ? "flexStart" : ""
-                  } ${verticalAlignment === "end" ? "flexEnd" : ""} ${
-                    verticalAlignment === "flexXcenter" ? "flexXcenter" : ""
-                  } ${
-                    verticalAlignment === "flexYcenter" ? "flexYcenter" : ""
-                  } flex flex-grow flex-between`}
+                  className={`${verticalAlignment === 'start' ? 'flexStart' : ''
+                    } ${verticalAlignment === 'end' ? 'flexEnd' : ''} ${verticalAlignment === 'flexXcenter' ? 'flexXcenter' : ''
+                    } ${verticalAlignment === 'flexYcenter' ? 'flexYcenter' : ''
+                    } flex flex-grow flex-between`}
                 >
                   <div className="u-mb16">
                     {pageTitle && (
@@ -153,6 +149,6 @@ const PageLayout = (props) => {
       <Footer />
     </div>
   );
-};
+}
 
 export default PageLayout;
