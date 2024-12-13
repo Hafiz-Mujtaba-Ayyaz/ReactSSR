@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from "./seo-links.module.scss"
 import Heading from "./heading"
 import LinkWithCount from "./link-with-count"

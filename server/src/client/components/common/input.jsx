@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from "./input.module.scss"
 
 const TextInput = ({ type = "text", className = "", rows = "4", ...props }) => {

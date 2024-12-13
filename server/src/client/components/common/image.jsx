@@ -1,3 +1,4 @@
+import React from "react";
 // import LazyLoad from "react-lazyload"
 import { LazyLoadImage } from "react-lazy-load-image-component"
 

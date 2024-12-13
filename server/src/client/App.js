@@ -64,10 +64,8 @@ function Root({ route }) {
         <link rel="stylesheet" href="main.css" />
       </Helmet>
       <AreaContext.Provider value={[areaUnit, setAreaUnit]}>
-        <Container>
-          <Header />
-          {renderRoutes(route.routes)}
-        </Container>
+        {/* <Header /> */}
+        {renderRoutes(route.routes)}
       </AreaContext.Provider>
     </>
     // </GAContext.Provider>

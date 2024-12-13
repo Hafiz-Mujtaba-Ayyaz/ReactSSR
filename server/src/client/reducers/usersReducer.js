@@ -1,3 +1,4 @@
+import React from "react";
 import { FETCH_USERS } from '../actions';
 
 export default (state = [], action) => {

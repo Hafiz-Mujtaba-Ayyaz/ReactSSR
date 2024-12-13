@@ -1,3 +1,4 @@
+import React from "react";
 import algoliasearch from "algoliasearch"
 
 export default class Algolia {

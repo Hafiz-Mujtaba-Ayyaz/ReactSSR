@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from './add-property.module.scss';
 import Button from '../common/button';
 import { IconSetting } from '../common/svg-icons';

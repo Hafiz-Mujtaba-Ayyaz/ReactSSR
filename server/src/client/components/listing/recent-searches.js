@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react"
 import { RECENT_SEARCHES_KEY } from "../../utils/constants"
 import Card from "../common/card"

@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { MdExpandLess, MdMail, MdPlace } from "react-icons/md";
 import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -7,7 +8,6 @@ import LayoutGrid from "../base/layout-grid";
 import Logo from "./logo";
 import { Telephone, Facebook, Twitter, LinkedIn } from "./svg-icons";
 import classNames from "classnames/bind";
-import React  from "react";
 
 const bindStylesWithClass = classNames.bind(styles);
 

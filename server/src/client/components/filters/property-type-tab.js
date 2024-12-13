@@ -1,3 +1,4 @@
+import React from "react";
 import Tabs, { TabPane } from "rc-tabs";
 import { useRef } from "react";
 // TODO add these styles

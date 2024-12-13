@@ -1,3 +1,5 @@
+import React from "react";
+import React from "react";
 import { useRef } from "react"
 import { HiSortDescending } from "react-icons/hi"
 import { sortingList } from "../../utils/constants"

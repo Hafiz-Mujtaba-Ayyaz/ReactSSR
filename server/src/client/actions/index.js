@@ -1,3 +1,4 @@
+import React from 'react';
 import axios from 'axios';
 
 export const FETCH_USERS = 'fetch_users';
@@ -46,4 +47,3 @@ export const fetchHomeLinks = () => async (dispatch) => {
     payload: res,
   });
 };
-

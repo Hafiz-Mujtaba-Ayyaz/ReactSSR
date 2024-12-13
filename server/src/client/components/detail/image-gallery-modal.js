@@ -1,3 +1,4 @@
+import React from "react";
 import ReactModal from "react-modal"
 import Close from "../common/close-btn"
 import * as styles from "../common/react-modal.module.scss"

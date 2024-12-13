@@ -1,3 +1,4 @@
+import React from "react";
 import CardVertical from "../common/card-vertical"
 import Heading from "../common/heading"
 import SwiperSlider from "../common/swiper-slider"

@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react"
 import { fetchSimilarAds } from "../../services/NetworkRequests"
 import AdsList from "./ads-list"

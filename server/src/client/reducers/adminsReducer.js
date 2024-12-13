@@ -1,3 +1,4 @@
+import React from "react";
 import { FETCH_ADMINS } from '../actions';
 
 export default (state = [], action) => {

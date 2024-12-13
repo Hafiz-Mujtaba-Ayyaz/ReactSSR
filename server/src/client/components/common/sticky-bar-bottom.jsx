@@ -1,3 +1,4 @@
+import React from "react";
 import { useContext } from "react"
 import { isMobile } from "react-device-detect"
 import { MdMail, MdPhone, MdSms } from "react-icons/md"

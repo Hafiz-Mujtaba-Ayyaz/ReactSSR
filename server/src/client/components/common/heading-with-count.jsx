@@ -1,3 +1,4 @@
+import React from "react";
 import Heading from "./heading"
 import * as styles from "./heading-with-count.module.scss"
 

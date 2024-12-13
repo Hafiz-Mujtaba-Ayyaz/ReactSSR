@@ -1,3 +1,4 @@
+import React from "react";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react"
 import { priceSliderRangesHash, priceStepsMappingsBuy, priceStepsMappingsRent } from "../../utils/constants"
 import { formatPrice } from "../../utils/utility"

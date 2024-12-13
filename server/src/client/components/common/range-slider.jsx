@@ -1,3 +1,4 @@
+import React from "react";
 import Slider, { Range } from "rc-slider"
 import * as styles from "./range-slider.module.scss"
 // TODO Add the styles

@@ -1,3 +1,4 @@
+import React from "react";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState, useContext } from "react"
 import { CITY_COOKIE_KEY, oddTypes, priceSliderRangesHash } from "../../utils/constants"
 import { clearFilters } from "../../utils/filter-utlils"

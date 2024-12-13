@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from "./no-result-found.module.scss"
 
 const NoResultFound = (props) => {

@@ -26,7 +26,8 @@ module.exports = {
         test: sassRegex,
         exclude: sassModuleRegex,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
+          // 'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -49,9 +50,16 @@ module.exports = {
               importLoaders: 1,
               modules: {
                 mode: 'local',
-                localIdentName: '[name]__[local]--[hash:base64:5]',
-                localIdentContext: path.resolve(__dirname, 'src'),
-                // namedExport: false,
+                getLocalIdent: (context, localIdentName, localName, options) => {
+                  const name = context.resourcePath.split('/').pop().replace(sassModuleRegex, '');
+                  const hash = require('loader-utils').getHashDigest(
+                    Buffer.from(`${name}${localName}`),
+                    'md5',
+                    'base64',
+                    5,
+                  );
+                  return `${name}__${localName}--${hash}`;
+                },
               },
             },
           },
@@ -63,7 +71,7 @@ module.exports = {
         test: cssRegex,
         exclude: cssModuleRegex,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -77,13 +85,22 @@ module.exports = {
       {
         test: cssModuleRegex,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               modules: {
                 mode: 'local',
-                localIdentName: '[name]__[local]__[hash:base64:5]',
+                getLocalIdent: (context, localIdentName, localName, options) => {
+                  const name = context.resourcePath.split('/').pop().replace(cssModuleRegex, '');
+                  const hash = require('loader-utils').getHashDigest(
+                    Buffer.from(`${name}${localName}`),
+                    'md5',
+                    'base64',
+                    5,
+                  );
+                  return `${name}__${localName}--${hash}`;
+                },
               },
             },
           },

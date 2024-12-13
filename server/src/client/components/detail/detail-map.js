@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react"
 import { MdPlace } from "react-icons/md"
 import ReactMapGL, { Marker, NavigationControl, Popup } from "react-map-gl"

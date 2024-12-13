@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from "./seo-content.module.scss"
 
 export const SEOContent = ({ content }) => {

@@ -1,3 +1,4 @@
+import React from "react";
 import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react"
 import { TiArrowSortedDown } from "react-icons/ti"
 import { areaRangeHash } from "../../utils/constants"

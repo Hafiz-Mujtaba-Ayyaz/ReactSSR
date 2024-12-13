@@ -1,3 +1,4 @@
+import React from "react";
 import { useCookies } from "react-cookie"
 import { FaCaretUp, FaSearch } from "react-icons/fa"
 import { CITY_COOKIE_KEY } from "../../utils/constants"

@@ -1,3 +1,4 @@
+import React from "react";
 import { useRef, useState } from "react"
 import { useCookies } from "react-cookie"
 import { MdSearch } from "react-icons/md"

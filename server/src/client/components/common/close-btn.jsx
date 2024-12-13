@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from "./close.module.scss"
 
 const Close = ({ className = "", ...props }) => {

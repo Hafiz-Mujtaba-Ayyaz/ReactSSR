@@ -1,3 +1,4 @@
+import React from "react";
 import { Formik } from "formik"
 import { MdMail } from "react-icons/md"
 import { sendEmailLead } from "../../services/NetworkRequests"

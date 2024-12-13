@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useRef } from "react"
 import Close from "./close-btn"
 import { crossIcon } from "./navigation-sheet.module.scss"

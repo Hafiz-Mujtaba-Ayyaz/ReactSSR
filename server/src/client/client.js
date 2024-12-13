@@ -24,7 +24,7 @@ const store = createStore(
 ReactDOM.hydrate(
   <Provider store={store}>
     <BrowserRouter>
-      {renderRoutes(Routes)}
+      <div>{renderRoutes(Routes)}</div>
     </BrowserRouter>
   </Provider>,
   document.querySelector('#root'),

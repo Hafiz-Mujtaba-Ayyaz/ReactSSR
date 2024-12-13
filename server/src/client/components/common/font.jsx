@@ -1,3 +1,4 @@
+import React from "react";
 const FontFaceObserver = require("fontfaceobserver")
 
 const Fonts = () => {

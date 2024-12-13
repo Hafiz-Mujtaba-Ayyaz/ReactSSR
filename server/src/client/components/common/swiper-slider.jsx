@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react"
 import SwiperCore, { Navigation, Pagination, Thumbs, Keyboard } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"

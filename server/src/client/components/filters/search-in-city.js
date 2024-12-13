@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from "./search-in-city.module.scss"
 import { MdArrowDropDown } from "react-icons/md"
 

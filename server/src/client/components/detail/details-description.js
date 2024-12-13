@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useRef, useState } from "react"
 import { isMobile } from "react-device-detect"
 import { MdMap } from "react-icons/md"

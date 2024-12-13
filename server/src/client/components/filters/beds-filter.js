@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useRef, useState } from "react"
 import { BEDS_FILTER_DATA } from "../../utils/constants"
 import { getBedsString } from "../../utils/utility"

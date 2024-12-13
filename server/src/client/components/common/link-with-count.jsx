@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import * as styles from "./link-with-count.module.scss"
 

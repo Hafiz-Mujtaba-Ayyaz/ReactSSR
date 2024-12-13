@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react"
 
 const useDetectOutsideClick = (el, initialState, autoclose, props) => {

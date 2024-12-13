@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import LayoutGrid from "../base/layout-grid";
 import Heading from "./heading";

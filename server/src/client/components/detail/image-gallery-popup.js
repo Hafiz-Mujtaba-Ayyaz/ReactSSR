@@ -1,3 +1,4 @@
+import React from "react";
 import dynamic from "next/dynamic"
 import { Fragment, useContext, useState } from "react"
 import { IoIosCheckmarkCircleOutline } from "react-icons/io"

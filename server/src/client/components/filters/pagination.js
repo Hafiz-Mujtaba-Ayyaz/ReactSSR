@@ -1,3 +1,5 @@
+import React from "react";
+import React from "react";
 import Pagination from "rc-pagination"
 import "../../../node_modules/rc-pagination/assets/index.css"
 import * as styles from "./pagination.module.scss"

@@ -1,3 +1,4 @@
+import React from "react";
 import classNames from "classnames/bind"
 import { createElement } from "react"
 import * as styles from "./heading.module.scss"

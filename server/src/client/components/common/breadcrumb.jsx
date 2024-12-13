@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import Container from "../base/container";

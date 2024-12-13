@@ -1,3 +1,4 @@
+import React from "react";
 import { FETCH_CURRENT_USER } from '../actions';
 
 export default function(state = null, action) {

@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react"
 import { MdExpandMore } from "react-icons/md"
 import * as styles from "./read-more.module.scss"

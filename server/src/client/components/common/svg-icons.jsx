@@ -1,3 +1,4 @@
+import React from "react";
 const LandArea = () => {
   return (
     <svg viewBox="0 0 25 25">

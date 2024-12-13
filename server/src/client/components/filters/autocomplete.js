@@ -1,7 +1,8 @@
-import Autocomplete from "react-autocomplete"
+import React from 'react';
+import Autocomplete from 'react-autocomplete';
 
-const AutocompleteSearch = (props) => {
-  return <Autocomplete {...props} />
+function AutocompleteSearch(props) {
+  return <Autocomplete {...props} />;
 }
 
-export default AutocompleteSearch
+export default AutocompleteSearch;

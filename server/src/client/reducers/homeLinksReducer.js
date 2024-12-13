@@ -1,3 +1,4 @@
+import React from "react";
 import { FETCH_HOME_LINKS } from "../actions/index";
 export default (state = [], action) => {
   switch (action.type) {

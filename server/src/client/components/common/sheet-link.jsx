@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react"
 import Heading from "./heading"
 import LinkWithCount from "./link-with-count"

@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from "../filters/add-keyword-filter.module.scss"
 import Close from "./close-btn"
 

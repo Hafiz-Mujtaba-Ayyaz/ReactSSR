@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from "./area-list-popup.module.scss"
 import { MdCheckCircle } from "react-icons/md"
 import Heading from "./heading"

@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useRef, useState } from "react"
 import * as styles from "./add-keyword-filter.module.scss"
 import Button from "../common/button"

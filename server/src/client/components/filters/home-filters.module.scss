@@ -144,7 +144,7 @@
 }
 
 .homePage {
-  [class^="page-layout_banner"] {
+  [class^="page-layout-module__banner"] {
     padding-block-end: 78px;
 
     @media (max-width: $screen-portrait-max) {

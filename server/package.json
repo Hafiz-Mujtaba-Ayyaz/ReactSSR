@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "Server side rendering project",
   "main": "index.js",
-
   "scripts": {
     "predev": "npm-run-all -p dev:build-*",
     "dev": "npm-run-all -p \"dev:build-* -- --watch\" dev:server",
@@ -12,7 +11,6 @@
     "dev:build-server": "webpack --config webpack.server.js",
     "dev:build-client": "webpack --config webpack.client.js"
   },
-
   "author": "",
   "license": "ISC",
   "dependencies": {

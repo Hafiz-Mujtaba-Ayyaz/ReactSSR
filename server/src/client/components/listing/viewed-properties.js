@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react"
 import { VIEWED_PROPERTIES_KEY } from "../../utils/constants"
 import { fetchViewedAds } from "../../services/NetworkRequests"

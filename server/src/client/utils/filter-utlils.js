@@ -1,3 +1,4 @@
+import React from "react";
 import Algolia from "../services/Algolia"
 import { fetchListings, fetchLocation } from "../services/NetworkRequests"
 import { areaRangeHash, FILTER_PREFERENCES, priceSliderRangesHash, typesHash } from "./constants"

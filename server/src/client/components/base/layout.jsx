@@ -1,3 +1,4 @@
+import React from "react";
 import * as styles from "./layout.module.scss"
 
 const Layout = ({ className = "", children }) => {
